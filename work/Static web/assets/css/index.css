@@ -1,0 +1,31 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@import url("base.css");
+
+#index_logo_container{
+  width: 50%;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 10vh;
+}
+
+/*---------------------------------- Logo animation ---------------------------------*/
+@keyframes logoFadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+#index_logo_container img {
+  animation-name: logoFadeOut;
+  animation-duration: 1s;
+  animation-delay: .8s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+/*-------------------------------- Logo animation END -------------------------------*/
