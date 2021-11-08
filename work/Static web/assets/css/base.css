@@ -1,0 +1,145 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*--------------------------------- Global variables --------------------------------*/
+:root{
+  /* Colors */
+  --black: #000;
+  --white: #fff;
+  --purple: #d588ee;
+  --mint: #afeec5;
+}
+/*------------------------------- Global variables END ------------------------------*/
+
+
+/*-------------------------------------- Fonts --------------------------------------*/
+@font-face{
+  font-family: logo_font;
+  src: url("../fonts/the_humble_script/The\ Humble.ttf");
+}
+
+@font-face{
+  font-family: standard_font;
+  src: url("../fonts/Lato/Lato-Regular.ttf");
+}
+/*------------------------------------ Fonts END ------------------------------------*/
+
+
+/*-------------------------------- Set default stuff --------------------------------*/
+html{
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -moz-scrollbars: vertical;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  max-width: 2000px;
+  margin: 0 auto;
+  background-color: var(--white);
+  font-family: standard_font;
+}
+
+#wrapper{
+  width: 100%;
+}
+
+a{
+  cursor: pointer;
+  text-decoration: none;
+  /* Set color later */
+}
+
+a:visited{
+  /* Set color later */
+}
+
+p{
+  padding-bottom: .5em;
+  line-height: 25px;
+}
+
+ul{
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  padding-inline-start: 40px;
+}
+
+button{
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  /* Set color later */
+}
+
+button:focus, input:focus{
+  outline: none;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  /* Set color later */
+  /* Set font later */
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  /* Set color later */
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  /* Set color later */
+  /* Set font later */
+}
+
+img{
+  width: 100%;
+}
+/*------------------------------ Set default stuff END ------------------------------*/
+
+/*----------------------------------- Common classes --------------------------------*/
+.absolute_element_centered{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  /*Add an element height on the specific element*/
+}
+
+.flexRow{
+  display: flex;
+  flex-direction: row;
+}
+
+.flexColumn{
+  display: flex;
+  flex-direction: column;
+}
+
+.posAbsolute{
+  position: absolute;
+}
+
+.posRelative{
+  position: relative;
+}
+
+.posSticky{
+  position: sticky;
+  position: -webkit-sticky; /* Safari */
+}
+
+.posFixed{
+  position: fixed;
+}
+/*--------------------------------- Common classes END ------------------------------*/

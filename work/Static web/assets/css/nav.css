@@ -1,0 +1,169 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@import url("base.css");
+
+nav{
+  padding: 5px 5px 5px 10px;
+  background-color: var(--mint);
+  color: var(--white);
+}
+
+
+#customerNav_mobile_container > *, #customerNav_desktop_container > *{ /* Target all child elements */
+  display: inline;
+  padding: 0 5px;
+}
+
+#acountBtnTxt{
+  display: inline;
+  margin-right: 3px;
+}
+
+#customerNav_icon_container{
+  display: inline-block;
+  width: 45%;
+  text-align: right;
+}
+
+#customerNav_icon_container a{
+  color: var(--white);
+}
+
+#customerNav_icon_container a:visited{
+  color: var(--white);
+}
+
+#customerNav_icon_container > *{
+  display: inline-block;
+  margin-left: 20px;
+}
+
+#customerNav_icon_container .navIcon:hover, #customerNav_icon_container a:hover, #accountBtn_container:hover{
+  cursor: pointer;
+  color: var(--purple);
+}
+
+#basketCounter{ /* Might delete later */
+  top: -15px;
+  right: -15px;
+  padding: 4px 9px;
+  border-radius: 25px;
+  background-color: var(--purple);
+  font-size: 1em;
+}
+
+/*------------------------------- Customer desktop nav ------------------------------*/
+#customerNav_desktop_container{
+  display: inline-block;
+  width: 50%;
+  list-style-type: none;
+}
+
+#customerNav_desktop_container a{
+  color: var(--white);
+  font-size: 1.5em;
+  margin-right: 5%;
+}
+
+#customerNav_desktop_container a:hover{
+  cursor: pointer;
+  color: var(--purple);
+}
+
+#customerNav_desktop_container a:visited{
+  color: var(--white);
+}
+/*----------------------------- Customer desktop nav END ----------------------------*/
+
+
+/*-------------------------------- Customer mobile nav ------------------------------*/
+#customerNav_mobile_menu_container{
+  display: none;
+  bottom: -130px;
+  right: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+#customerNav_mobile_menu{
+  background-color: var(--mint);
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+  list-style-type: none;
+  width: 100%;
+  text-align: right;
+  font-size: 1.2em;
+}
+
+#customerNav_mobile_menu a{
+  display: block;
+  padding: 5px 10px;
+  color: var(--white);
+}
+
+#customerNav_mobile_menu a:visited{
+  color: var(--white);
+}
+/*------------------------------ Customer mobile nav END ----------------------------*/
+
+
+@media only screen and (min-width: 770px) { /* Settings for desktop view */
+  #customerNav_mobile_container{
+    display: none;
+    opacity: 0;
+  }
+
+  #acountBtnTxt{
+    font-size: 1.5em;
+  }
+
+  .navIcon{
+    font-size: 2em; 
+  }
+
+  #customerNav_mobile_menu_container{
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 930px) { /* Minor font-size adjustments */
+  #customerNav_desktop_container a{
+    font-size: 1.2em;
+  }
+
+  .acountBtnTxt{
+    font-size: 1.2em;
+  }
+
+  .navIcon{
+    font-size: 1.6em; 
+  }
+}
+
+@media only screen and (max-width: 770px) { /* Settings for mobile view */
+  #customerNav_desktop_container{
+    display: none;
+    opacity: 0;
+  }
+
+  #customerNav_icon_container{
+    display: inline-block;
+    width: 100%;
+  }
+
+  #basketCounter{ /* Might delete later */
+    top: -7px;
+    right: -7px;
+    padding: 2px 7px;
+    border-radius: 25px;
+    font-size: .8em;
+  }
+}
+
+@media only screen and (max-width: 295px) {
+  #customerNav_icon_container > *{
+    margin-left: 5px;
+  }
+}
