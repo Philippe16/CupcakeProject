@@ -8,19 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class LoginCommand extends CommandUnprotectedPage
-{
+public class LoginCommand extends CommandUnprotectedPage {
     private UserFacade userFacade;
 
-    public LoginCommand(String pageToShow)
-    {
+    public LoginCommand(String pageToShow) {
         super(pageToShow);
         userFacade = new UserFacade(database);
     }
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException
-    {
+    public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
@@ -35,9 +32,7 @@ public class LoginCommand extends CommandUnprotectedPage
 
         String pageToShow =  user.getRole() + "page";
         return REDIRECT_INDICATOR + pageToShow;
-        }
-        catch (UserException ex)
-        {
+        } catch (UserException ex) {
             request.setAttribute("error", "Wrong username or password!");
             return "loginpage";
         }
