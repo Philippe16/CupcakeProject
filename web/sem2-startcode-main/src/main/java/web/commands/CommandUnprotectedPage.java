@@ -6,12 +6,10 @@ import business.persistence.Database;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class CommandUnprotectedPage extends Command
-{
+public class CommandUnprotectedPage extends Command {
     public String pageToShow;
 
-    public CommandUnprotectedPage(String pageToShow)
-    {
+    public CommandUnprotectedPage(String pageToShow) {
         this.pageToShow = pageToShow;
     }
 

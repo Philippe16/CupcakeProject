@@ -8,8 +8,7 @@ import javax.servlet.http.HttpSession;
 
 public class LogoutCommand extends CommandUnprotectedPage {
 
-    public LogoutCommand(String pageToShow)
-    {
+    public LogoutCommand(String pageToShow) {
         super(pageToShow);
        // Here you can insert code to run before logout
     }
