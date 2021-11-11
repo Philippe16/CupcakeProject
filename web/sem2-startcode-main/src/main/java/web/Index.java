@@ -8,8 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(name = "Index", urlPatterns = {""})
-public class Index extends HttpServlet
-{
+public class Index extends HttpServlet {
     @Override
     protected void doGet(
             HttpServletRequest request,
