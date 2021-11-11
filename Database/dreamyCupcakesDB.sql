@@ -16,35 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `admins`
---
-
-DROP TABLE IF EXISTS `admins`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `admins` (
-  `admin_id` int NOT NULL AUTO_INCREMENT,
-  `firstName` varchar(100) NOT NULL,
-  `lastName` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `password` varchar(100) NOT NULL,
-  PRIMARY KEY (`admin_id`),
-  UNIQUE KEY `admin_id_UNIQUE` (`admin_id`),
-  UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `admins`
---
-
-LOCK TABLES `admins` WRITE;
-/*!40000 ALTER TABLE `admins` DISABLE KEYS */;
-INSERT INTO `admins` VALUES (1,'admin_firstName','admin_lastName_test','admin@gmail.com','123');
-/*!40000 ALTER TABLE `admins` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `cupcakeflavors`
 --
 
@@ -97,36 +68,6 @@ INSERT INTO `cupcaketoppings` VALUES (1,'Chocolate',5),(2,'Blueberry',5),(3,'Ras
 UNLOCK TABLES;
 
 --
--- Table structure for table `customers`
---
-
-DROP TABLE IF EXISTS `customers`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `customers` (
-  `customer_id` int NOT NULL AUTO_INCREMENT,
-  `firstName` varchar(100) NOT NULL,
-  `lastName` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `password` varchar(100) NOT NULL,
-  `accountBalance` double DEFAULT '0',
-  PRIMARY KEY (`customer_id`),
-  UNIQUE KEY `customer_id_UNIQUE` (`customer_id`),
-  UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `customers`
---
-
-LOCK TABLES `customers` WRITE;
-/*!40000 ALTER TABLE `customers` DISABLE KEYS */;
-INSERT INTO `customers` VALUES (1,'customer_firstName','customer_lastName','customer@gmail.com','123',100),(2,'customer2_firstName','customer2_lastName','customer2@gmail.com','123',200);
-/*!40000 ALTER TABLE `customers` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `orderedcupcakes`
 --
 
@@ -139,6 +80,7 @@ CREATE TABLE `orderedcupcakes` (
   `fk_cupcakeFlavor_id` int NOT NULL,
   `fk_cupcakeTopping_id` int NOT NULL,
   `amount` int NOT NULL,
+  `price` double NOT NULL,
   PRIMARY KEY (`orderedCupcake_id`),
   UNIQUE KEY `orderedCupcake_id_UNIQUE` (`orderedCupcake_id`),
   KEY `fk_order_id_idx` (`fk_order_id`),
@@ -156,7 +98,7 @@ CREATE TABLE `orderedcupcakes` (
 
 LOCK TABLES `orderedcupcakes` WRITE;
 /*!40000 ALTER TABLE `orderedcupcakes` DISABLE KEYS */;
-INSERT INTO `orderedcupcakes` VALUES (12,1,1,1,2),(13,1,1,3,6),(14,2,2,1,2),(15,3,3,4,12),(16,3,3,2,2),(17,4,4,5,6),(18,4,1,5,6),(19,4,4,2,4),(20,5,3,1,2),(21,6,2,3,4),(22,6,5,4,2);
+INSERT INTO `orderedcupcakes` VALUES (12,1,1,1,2,20),(13,1,1,3,6,60),(14,2,2,1,2,20),(15,3,3,4,12,132),(16,3,3,2,2,20),(17,4,4,5,6,72),(18,4,1,5,6,66),(19,4,4,2,4,44),(20,5,3,1,2,20),(21,6,2,3,4,10),(22,6,5,4,2,13);
 /*!40000 ALTER TABLE `orderedcupcakes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -175,7 +117,7 @@ CREATE TABLE `orders` (
   PRIMARY KEY (`order_id`),
   UNIQUE KEY `order_id_UNIQUE` (`order_id`),
   KEY `fk_customer_id_idx` (`fk_customer_id`),
-  CONSTRAINT `fk_customer_id` FOREIGN KEY (`fk_customer_id`) REFERENCES `customers` (`customer_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+  CONSTRAINT `fk_customer_id` FOREIGN KEY (`fk_customer_id`) REFERENCES `users` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -188,6 +130,37 @@ LOCK TABLES `orders` WRITE;
 INSERT INTO `orders` VALUES (1,1,'completed','2021-09-25'),(2,1,'pending','2021-11-10'),(3,2,'completed','2021-11-05'),(4,2,'cancelled','2021-10-11'),(5,2,'completed','2021-09-25'),(6,1,'completed','2021-06-16');
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `users` (
+  `user_id` int NOT NULL AUTO_INCREMENT,
+  `firstName` varchar(100) NOT NULL,
+  `lastName` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `accountBalance` double DEFAULT '0',
+  `role` varchar(10) NOT NULL DEFAULT 'customer',
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `customer_id_UNIQUE` (`user_id`),
+  UNIQUE KEY `email_UNIQUE` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'customer1_firstName','customer1_lastName','customer1@gmail.com','123',100,'customer'),(2,'customer2_firstName','customer2_lastName','customer2@gmail.com','123',200,'customer'),(3,'admin1_firstName','admin1_lastName','admin1@gmail.com','123',0,'admin'),(4,'customer3_firstName','customer3_lastName','customer3@gmail.com','123',0,'customer');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -198,4 +171,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-10 11:49:33
+-- Dump completed on 2021-11-11 11:55:51
