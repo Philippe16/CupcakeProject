@@ -31,9 +31,11 @@ public class AuthorizationFilter implements Filter {
         HttpServletResponse res = (HttpServletResponse) response;
 
         String servletPath = req.getServletPath();
+
         if (servletPath != null && servletPath.equals("/fc")) {
             Command command = Command.fromPath(req, FrontController.database);
             HttpSession session = req.getSession(false);
+
             if (command instanceof CommandProtectedPage) {
                 String roleFromCommand = ((CommandProtectedPage) command).getRole();
 
