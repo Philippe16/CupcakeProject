@@ -112,12 +112,14 @@ DROP TABLE IF EXISTS `orders`;
 CREATE TABLE `orders` (
   `order_id` int NOT NULL AUTO_INCREMENT,
   `fk_user_id` int NOT NULL,
-  `status` varchar(10) NOT NULL DEFAULT 'pending',
   `orderDate` date NOT NULL,
   `pickupDate` date NOT NULL DEFAULT '2021-11-11',
+  `fk_orderStatus_id` int DEFAULT '1',
   PRIMARY KEY (`order_id`),
   UNIQUE KEY `order_id_UNIQUE` (`order_id`),
   KEY `fk_user_id_idx` (`fk_user_id`),
+  KEY `fk_orderstatus_id_idx` (`fk_orderStatus_id`),
+  CONSTRAINT `fk_orderstatus_id` FOREIGN KEY (`fk_orderStatus_id`) REFERENCES `orderstatuses` (`orderStatus_id`) ON DELETE SET NULL ON UPDATE SET NULL,
   CONSTRAINT `fk_user_id` FOREIGN KEY (`fk_user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -128,8 +130,59 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (1,1,'pending','2021-09-25','2021-11-11'),(3,1,'pending','2021-10-11','2021-11-11');
+INSERT INTO `orders` VALUES (1,1,'2021-09-25','2021-11-12',1),(3,1,'2021-10-11','2021-11-11',1);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `orderstatuses`
+--
+
+DROP TABLE IF EXISTS `orderstatuses`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `orderstatuses` (
+  `orderStatus_id` int NOT NULL,
+  `status` varchar(10) NOT NULL,
+  PRIMARY KEY (`orderStatus_id`),
+  UNIQUE KEY `orderStatus_id_UNIQUE` (`orderStatus_id`),
+  UNIQUE KEY `status_UNIQUE` (`status`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `orderstatuses`
+--
+
+LOCK TABLES `orderstatuses` WRITE;
+/*!40000 ALTER TABLE `orderstatuses` DISABLE KEYS */;
+INSERT INTO `orderstatuses` VALUES (3,'cancelled'),(2,'completed'),(1,'pending');
+/*!40000 ALTER TABLE `orderstatuses` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `userroles`
+--
+
+DROP TABLE IF EXISTS `userroles`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `userroles` (
+  `userRole_id` int NOT NULL,
+  `role` varchar(10) NOT NULL,
+  PRIMARY KEY (`userRole_id`),
+  UNIQUE KEY `role_UNIQUE` (`role`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `userroles`
+--
+
+LOCK TABLES `userroles` WRITE;
+/*!40000 ALTER TABLE `userroles` DISABLE KEYS */;
+INSERT INTO `userroles` VALUES (1,'admin'),(2,'customer');
+/*!40000 ALTER TABLE `userroles` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -145,11 +198,13 @@ CREATE TABLE `users` (
   `lastName` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `accountBalance` double DEFAULT '0',
-  `role` varchar(10) NOT NULL DEFAULT 'customer',
+  `accountBalance` double NOT NULL DEFAULT '0',
+  `fk_userRole_id` int DEFAULT '1',
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `customer_id_UNIQUE` (`user_id`),
-  UNIQUE KEY `email_UNIQUE` (`email`)
+  UNIQUE KEY `email_UNIQUE` (`email`),
+  KEY `fk_userRole_id_idx` (`fk_userRole_id`),
+  CONSTRAINT `fk_userRole_id` FOREIGN KEY (`fk_userRole_id`) REFERENCES `userroles` (`userRole_id`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -159,7 +214,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'customer1_firstName','customer1_lastName','customer1@gmail.com','123',50,'customer'),(2,'customer2_firstName','customer2_lastName','customer2@gmail.com','123',200,'customer'),(3,'admin1_firstName','admin1_lastName','admin1@gmail.com','123',0,'admin'),(4,'customer3_firstName','customer3_lastName','customer3@gmail.com','123',0,'customer'),(5,'testInsertFn','testInsertLn','testInsert@gmail.com','testInsert',20,'customer');
+INSERT INTO `users` VALUES (1,'customer1_firstName','customer1_lastName','customer1@gmail.com','123',50,2),(2,'customer2_firstName','customer2_lastName','customer2@gmail.com','123',200,2),(3,'admin1_firstName','admin1_lastName','admin1@gmail.com','123',0,1),(4,'customer3_firstName','customer3_lastName','customer3@gmail.com','123',0,2),(5,'testInsertFn','testInsertLn','testInsert@gmail.com','testInsert',20,2);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -172,4 +227,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-11 17:22:55
+-- Dump completed on 2021-11-12  1:25:34
