@@ -1,39 +1,34 @@
-<%@page contentType="text/html" pageEncoding="UTF-8" %>
-<%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<t:genericpage>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-    <jsp:attribute name="header">
-         Home
-    </jsp:attribute>
+<html lang="en">
 
-    <jsp:attribute name="footer">
-        <c:set var="addHomeLink" value="${false}" scope="request"/>
-    </jsp:attribute>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <jsp:body>
+    <title>Dreamy Cupcakes</title>
 
-        <div>
-            <h2>Our Cool Site</h2>
+    <!-- CSS -->
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/base.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/index.css">
+</head>
 
-            <div style="margin-top: 3em;margin-bottom: 3em;">
-                Main page for this 2. semester start project used at cphbusiness.dk
-            </div>
+<body>
+<div id="wrapper">
+    <div id="index_logo_container">
+        <img src="<%=request.getContextPath()%>/assets/images/logo_elements/logo - original.png" alt="Dreamy Cupcakes' logo">
+    </div>
+</div> <!-- #wrapper END -->
 
-            <c:if test="${sessionScope.role == 'employee' }">
-                <p style="font-size: larger">This is what you can do,
-                    since your are logged in as an employee</p>
-                 <p><a href="fc/employeepage">Employee Page</a>
-             </c:if>
 
-             <c:if test="${sessionScope.role == 'customer' }">
-                <p style="font-size: larger">This is what you can do, since your
-                    are logged in as a customer</p>
-                <p><a href="fc/customerpage">Customer Page</a>
-            </c:if>
+<!-- Redirect to home.html after logo fade out -->
+<script>
+    setTimeout(function() {
+        document.location = "fc/home";
+    }, 1800); // <-- Delay in milliseconds - Match with logo fade out animation found in index.css
+</script>
+</body>
 
-        </div>
-
-    </jsp:body>
-</t:genericpage>
+</html>

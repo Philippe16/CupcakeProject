@@ -1,0 +1,117 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@import url("base.css");
+
+nav{
+  z-index: 10;
+  position: sticky;
+  position: -webkit-sticky; /* Safari */
+  top: 0;
+  padding: 10px 0;
+  background-color: var(--mint);
+  font-size: 1.5em;
+  color: var(--white);
+}
+
+/*------------------------------------ Desktop menu ---------------------------------*/
+#menu_desktop, #navIcon_container{
+  width: 50%;
+}
+
+#menu_desktop:nth-child(1){
+  padding-left: 2.5%;
+}
+
+.menuItem_desktop{
+  padding-right: 5%;
+}
+
+.menuItem_link_desktop:hover{
+  color: var(--purple);
+}
+
+.menuItem_link_desktop:visited{
+  color: var(--white);
+}
+/*---------------------------------- Desktop menu END -------------------------------*/
+
+
+/*--------------------------------- NavIcon container -------------------------------*/
+#navIcon_container{
+  justify-content: flex-end;
+}
+
+#navIcon_container:nth-child(2){
+  padding-right: 2.5%;
+}
+
+#acountIconTxt_container{
+  display: inline;
+  align-self: center;
+  padding-right: 5px;
+}
+
+.navIconItem{
+  padding: 0 1%;
+}
+
+.navIcon{
+  font-size: 1.3em;
+}
+
+.navIcon:hover{
+  cursor: pointer;
+  color: var(--purple);
+}
+
+.menu_mobile_container{
+  display: none;
+  opacity: 0;
+}
+/*------------------------------- NavIcon container END -----------------------------*/
+
+
+/*------------------------------------- Mobile menu ---------------------------------*/
+#menu_mobile_container{
+  z-index: 1;
+  width: 100%;
+  bottom: -142px;
+  padding: 0 2.5%;
+  background-color: var(--mint);
+  text-align: right;
+}
+
+.menuItem_mobile{
+  padding: 5px 0;
+}
+/*----------------------------------- Mobile menu END -------------------------------*/
+
+
+/*------------------------------------ Media queries --------------------------------*/
+@media only screen and (min-width: 661px) { /* Settings for desktop view */
+  #menu_mobile{
+    display: none;
+    opacity: 0;
+  }
+}
+
+@media only screen and (max-width: 770px) { /* Minor font-size adjustments */
+  nav{
+    font-size: 1.3em;
+  }
+}
+
+
+@media only screen and (max-width: 660px) { /* Settings for mobile view */
+  #menu_desktop{
+    display: none;
+    opacity: 0;
+  }
+
+  #navIcon_container{
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+/*---------------------------------- Media queries END ------------------------------*/
