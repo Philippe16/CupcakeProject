@@ -4,166 +4,114 @@
 @import url("base.css");
 
 nav{
-  padding: 5px 5px 5px 10px;
+  z-index: 10;
+  position: sticky;
+  position: -webkit-sticky; /* Safari */
+  top: 0;
+  padding: 10px 0;
   background-color: var(--mint);
-  color: var(--white);
-}
-
-
-#customerNav_mobile_container > *, #customerNav_desktop_container > *{ /* Target all child elements */
-  display: inline;
-  padding: 0 5px;
-}
-
-#acountBtnTxt{
-  display: inline;
-  margin-right: 3px;
-}
-
-#customerNav_icon_container{
-  display: inline-block;
-  width: 45%;
-  text-align: right;
-}
-
-#customerNav_icon_container a{
-  color: var(--white);
-}
-
-#customerNav_icon_container a:visited{
-  color: var(--white);
-}
-
-#customerNav_icon_container > *{
-  display: inline-block;
-  margin-left: 20px;
-}
-
-#customerNav_icon_container .navIcon:hover, #customerNav_icon_container a:hover, #accountBtn_container:hover{
-  cursor: pointer;
-  color: var(--purple);
-}
-
-#basketCounter{ /* Might delete later */
-  top: -15px;
-  right: -15px;
-  padding: 4px 9px;
-  border-radius: 25px;
-  background-color: var(--purple);
-  font-size: 1em;
-}
-
-/*------------------------------- Customer desktop nav ------------------------------*/
-#customerNav_desktop_container{
-  display: inline-block;
-  width: 50%;
-  list-style-type: none;
-}
-
-#customerNav_desktop_container a{
-  color: var(--white);
   font-size: 1.5em;
-  margin-right: 5%;
+  color: var(--white);
 }
 
-#customerNav_desktop_container a:hover{
+/*------------------------------------ Desktop menu ---------------------------------*/
+#menu_desktop, #navIcon_container{
+  width: 50%;
+}
+
+#menu_desktop:nth-child(1){
+  padding-left: 2.5%;
+}
+
+.menuItem_desktop{
+  padding-right: 5%;
+}
+
+.menuItem_link_desktop:hover{
+  color: var(--purple);
+}
+
+.menuItem_link_desktop:visited{
+  color: var(--white);
+}
+/*---------------------------------- Desktop menu END -------------------------------*/
+
+
+/*--------------------------------- NavIcon container -------------------------------*/
+#navIcon_container{
+  justify-content: flex-end;
+}
+
+#navIcon_container:nth-child(2){
+  padding-right: 2.5%;
+}
+
+#acountIconTxt_container{
+  display: inline;
+  align-self: center;
+  padding-right: 5px;
+}
+
+.navIconItem{
+  padding: 0 1%;
+}
+
+.navIcon{
+  font-size: 1.3em;
+}
+
+.navIcon:hover{
   cursor: pointer;
   color: var(--purple);
 }
 
-#customerNav_desktop_container a:visited{
-  color: var(--white);
-}
-/*----------------------------- Customer desktop nav END ----------------------------*/
-
-
-/*-------------------------------- Customer mobile nav ------------------------------*/
-#customerNav_mobile_menu_container{
+.menu_mobile_container{
   display: none;
-  bottom: -130px;
-  right: 0;
-  width: 100%;
+  opacity: 0;
+}
+/*------------------------------- NavIcon container END -----------------------------*/
+
+
+/*------------------------------------- Mobile menu ---------------------------------*/
+#menu_mobile_container{
   z-index: 1;
-}
-
-#customerNav_mobile_menu{
-  background-color: var(--mint);
-  margin-block-start: 0;
-  margin-block-end: 0;
-  padding-inline-start: 0;
-  list-style-type: none;
   width: 100%;
+  bottom: -142px;
+  padding: 0 2.5%;
+  background-color: var(--mint);
   text-align: right;
-  font-size: 1.2em;
 }
 
-#customerNav_mobile_menu a{
-  display: block;
-  padding: 5px 10px;
-  color: var(--white);
+.menuItem_mobile{
+  padding: 5px 0;
+}
+/*----------------------------------- Mobile menu END -------------------------------*/
+
+
+/*------------------------------------ Media queries --------------------------------*/
+@media only screen and (min-width: 661px) { /* Settings for desktop view */
+  #menu_mobile{
+    display: none;
+    opacity: 0;
+  }
 }
 
-#customerNav_mobile_menu a:visited{
-  color: var(--white);
+@media only screen and (max-width: 770px) { /* Minor font-size adjustments */
+  nav{
+    font-size: 1.3em;
+  }
 }
-/*------------------------------ Customer mobile nav END ----------------------------*/
 
 
-@media only screen and (min-width: 770px) { /* Settings for desktop view */
-  #customerNav_mobile_container{
+@media only screen and (max-width: 660px) { /* Settings for mobile view */
+  #menu_desktop{
     display: none;
     opacity: 0;
   }
 
-  #acountBtnTxt{
-    font-size: 1.5em;
-  }
-
-  .navIcon{
-    font-size: 2em; 
-  }
-
-  #customerNav_mobile_menu_container{
-    display: none;
-  }
-}
-
-@media only screen and (max-width: 930px) { /* Minor font-size adjustments */
-  #customerNav_desktop_container a{
-    font-size: 1.2em;
-  }
-
-  .acountBtnTxt{
-    font-size: 1.2em;
-  }
-
-  .navIcon{
-    font-size: 1.6em; 
-  }
-}
-
-@media only screen and (max-width: 770px) { /* Settings for mobile view */
-  #customerNav_desktop_container{
-    display: none;
-    opacity: 0;
-  }
-
-  #customerNav_icon_container{
-    display: inline-block;
+  #navIcon_container{
     width: 100%;
-  }
-
-  #basketCounter{ /* Might delete later */
-    top: -7px;
-    right: -7px;
-    padding: 2px 7px;
-    border-radius: 25px;
-    font-size: .8em;
+    justify-content: flex-end;
   }
 }
-
-@media only screen and (max-width: 295px) {
-  #customerNav_icon_container > *{
-    margin-left: 5px;
-  }
-}
+/*---------------------------------- Media queries END ------------------------------*/

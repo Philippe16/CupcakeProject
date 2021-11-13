@@ -5,6 +5,8 @@
 :root{
   /* Colors */
   --black: #000;
+  --grey: #6D6D6D;
+  --lightGrey: #b6b6b6;
   --white: #fff;
   --purple: #d588ee;
   --mint: #afeec5;
@@ -15,12 +17,12 @@
 
 /*-------------------------------------- Fonts --------------------------------------*/
 @font-face{
-  font-family: logo_font;
+  font-family: the_humble_script;
   src: url("../fonts/the_humble_script/The\ Humble.ttf");
 }
 
 @font-face{
-  font-family: standard_font;
+  font-family: lato;
   src: url("../fonts/Lato/Lato-Regular.ttf");
 }
 /*------------------------------------ Fonts END ------------------------------------*/
@@ -43,7 +45,8 @@ body{
   max-width: 2000px;
   margin: 0 auto;
   background-color: var(--white);
-  font-family: standard_font;
+  font-family: lato;
+  color: var(--grey);
 }
 
 #wrapper{
@@ -53,11 +56,11 @@ body{
 a{
   cursor: pointer;
   text-decoration: none;
-  /* Set color later */
+  color: var(--white);
 }
 
 a:visited{
-  /* Set color later */
+  color: var(--white);
 }
 
 p{
@@ -74,8 +77,8 @@ ul{
 button{
   cursor: pointer;
   border: none;
-  background-color: transparent;
-  /* Set color later */
+  background-color: var(--purple);
+  color: var(--white);
 }
 
 button:focus, input:focus{
@@ -87,22 +90,26 @@ input:focus::placeholder {
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  /* Set color later */
-  /* Set font later */
+  font-family: lato;
+  color: var(--lightGrey);
   opacity: 1; /* Firefox */
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-  /* Set color later */
+  color: var(--lightGrey);
 }
 
 ::-ms-input-placeholder { /* Microsoft Edge */
-  /* Set color later */
-  /* Set font later */
+  color: var(--lightGrey);
+  font-family: lato;
 }
 
 img{
   width: 100%;
+}
+
+address{
+  font-style: normal;
 }
 /*------------------------------ Set default stuff END ------------------------------*/
 
