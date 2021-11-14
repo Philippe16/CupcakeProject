@@ -19,8 +19,14 @@
 
       <div id="navIcon_container" class="flexRow">
          <div id="accountIcon_container" class="navIconItem flexRow">
-            <div id="acountIconTxt_container">
-               Sign in / Sign up ${sessionScope.email}
+            <div id="accountIconTxt_container">
+               <c:if test="${sessionScope.email == null }">
+                  Sign in / Sign up
+               </c:if>
+
+               <c:if test="${sessionScope.email != null }">
+                   ${sessionScope.email}
+                </c:if>
             </div>
 
             <a href="signIn">
