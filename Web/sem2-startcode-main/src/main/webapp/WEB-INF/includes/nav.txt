@@ -29,9 +29,17 @@
                 </c:if>
             </div>
 
-            <a href="signIn">
-               <i class="navIcon fas fa-user-circle"></i>
-            </a>
+            <c:if test="${sessionScope.email == null }">
+                <a href="signIn">
+                   <i class="navIcon fas fa-user-circle"></i>
+                </a>
+            </c:if>
+
+            <c:if test="${sessionScope.email != null }">
+                <a href="account">
+                   <i class="navIcon fas fa-user-circle"></i>
+                </a>
+             </c:if>
          </div>
 
          <div id="shoppingCartIcon_container" class="navIconItem">

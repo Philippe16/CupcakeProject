@@ -1,6 +1,7 @@
 
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <html>
       <head>
          <meta charset="UTF-8">
@@ -21,11 +22,9 @@
       <div id="wrapper">
          <!-- header include -->
          <%@include file="includes/header.txt"%>
-         <!-- header include END -->
 
          <!-- guest/customer nav include -->
          <%@include file="includes/nav.txt"%>
-         <!-- guest/customer nav include END -->
 
          <main>
 
@@ -33,7 +32,6 @@
 
          <!--Footer include -->
          <%@include file="includes/footer.txt"%>
-         <!--Footer include END -->
       </div> <!-- #wrapper END -->
    </body>
 </html>
