@@ -14,12 +14,14 @@ public class UserMapper {
 
     public void createUser(User user) throws UserException {
         try (Connection connection = database.connect()) {
-            String sql = "INSERT INTO users (email, password, role) VALUES (?, ?, ?)";
+            String sql = "INSERT INTO users (firstName, lastName, email, password, accountBalance) VALUES (?, ?, ?, ?, ?)";
 
             try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-                ps.setString(1, user.getEmail());
-                ps.setString(2, user.getPassword());
-                ps.setString(3, user.getRole());
+                ps.setString(1, user.getfirstName());
+                ps.setString(2, user.getLastName());
+                ps.setString(3, user.getEmail());
+                ps.setString(4, user.getPassword());
+                ps.setDouble(5, user.getAccountBalance());
                 ps.executeUpdate();
                 ResultSet ids = ps.getGeneratedKeys();
                 ids.next();
@@ -35,7 +37,11 @@ public class UserMapper {
 
     public User login(String email, String password) throws UserException {
         try (Connection connection = database.connect()) {
-            String sql = "SELECT id, role FROM users WHERE email=? AND password=?";
+            String sql =
+                   "SELECT users.user_id, users.firstName, users.lastName, users.accountBalance, userroles.role\n" +
+                   "FROM (users\n" +
+                   "INNER JOIN userroles ON users.fk_userRole_id = userroles.userRole_id) " +
+                   "WHERE email=? AND password=?";
 
             try (PreparedStatement ps = connection.prepareStatement(sql)) {
                 ps.setString(1, email);
@@ -43,9 +49,13 @@ public class UserMapper {
                 ResultSet rs = ps.executeQuery();
 
                 if (rs.next()) {
+                    int id = rs.getInt("user_id");
+                    String firstName = rs.getString("firstName");
+                    String lastName = rs.getString("lastName");
+                    double accountBalance = rs.getDouble("accountBalance");
                     String role = rs.getString("role");
-                    int id = rs.getInt("id");
-                    User user = new User(email, password, role);
+
+                    User user = new User(firstName, lastName, email, password, accountBalance, role);
                     user.setId(id);
                     return user;
                 } else {
