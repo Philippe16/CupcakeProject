@@ -1,0 +1,94 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@import url("base.css");
+
+h2 {
+   font-size: 2.5em;
+   text-align: center;
+   margin: 50px 0px;
+   
+}
+
+.signInFormSection{
+   text-align: center;
+   margin-bottom: 25px;
+   
+}
+
+.signUpLinkContainer{
+   margin-top:50px;
+   text-align: right;
+   
+}
+
+.loginBtn{
+   color: white;
+   font-size: 1em;
+}
+
+
+.sumbitButtonContainer{
+   background-color: var(--purple);
+   margin-left: 43%;
+   padding: 10px 15px;
+   border-radius: 10px;
+   width: 100px;
+   text-align: center;
+   
+}
+
+a:hover{
+   color: var(--mint);
+   background-color: transparent;
+}
+
+a:visited{
+   color: var(--purple);
+   background-color: transparent;
+}
+
+
+.homeBtn{
+   
+   font-size: 1.2em;
+   width: 100px;
+   margin-left: 10px;
+}
+
+
+.form_section_container{
+   margin: 50px 25%;
+   padding: 50px 10px;
+   border: 4px var(--mint) solid;
+}
+
+.form_title_container{
+   top: 0;
+   width: 25%;
+   margin-left: 37.5%;
+   margin-right: 37.5%;
+   padding: 20px 10px;
+   background-color: var(--white);
+   text-align: center;
+}
+
+.form_title{
+   display: inline;
+   font-family: logo_font;
+   font-size: 1.8em;
+   color: var(--purple);
+}
+
+.standardForm{
+   
+   border: 2px var(--mint) solid;
+   width: 98%;
+   margin: 0 auto;
+   padding: 50px 15px;
+}
+
+.ArrowRight{
+   color: var(--purple);
+   
+}
