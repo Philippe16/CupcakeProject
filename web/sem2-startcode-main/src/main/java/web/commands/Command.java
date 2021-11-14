@@ -20,10 +20,16 @@ public abstract class Command {
         commands = new HashMap<>();
         commands.put("index", new CommandUnprotectedPage("index"));
         commands.put("home", new CommandUnprotectedPage("home"));
+        commands.put("about", new CommandUnprotectedPage("about"));
+        commands.put("shop", new CommandUnprotectedPage("shop"));
+        commands.put("contact", new CommandUnprotectedPage("contact"));
+
         commands.put("signIn", new CommandUnprotectedPage("signIn"));
+        commands.put("loginCommand", new LoginCommand(""));
+
 
         commands.put("loginpage", new CommandUnprotectedPage("loginpage"));
-        commands.put("logincommand", new LoginCommand(""));
+        commands.put("logincommand", new LoginCommandz(""));
         commands.put("logoutcommand", new LogoutCommand(""));
         commands.put("registerpage", new CommandUnprotectedPage("registerpage"));
         commands.put("registercommand", new RegisterCommand(""));

@@ -22,19 +22,22 @@ public class LoginCommand extends CommandUnprotectedPage {
         String password = request.getParameter("password");
 
         try {
-        User user = userFacade.login(email, password);
+            User user = userFacade.login(email, password);
 
-        HttpSession session = request.getSession();
+            HttpSession session = request.getSession();
 
-        session.setAttribute("user", user);
-        session.setAttribute("role", user.getRole());
-        session.setAttribute("email", email);
+            session.setAttribute("user", user);
+            session.setAttribute("role", user.getRole());
+            session.setAttribute("email", email);
 
-        String pageToShow = user.getRole() + "page";
-        return REDIRECT_INDICATOR + pageToShow;
+            String pageToShow = "home";
+            System.out.println("Logged in!!!"); // DELETE LATER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            return REDIRECT_INDICATOR + pageToShow;
         } catch (UserException ex) {
             request.setAttribute("error", "Wrong username or password!");
-            return "loginpage";
+            System.out.println("Something went wrong!!!"); // DELETE LATER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            ex.printStackTrace();
+            return "signIn";
         }
     }
 

@@ -7,7 +7,7 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <title>Dreamy Cupcakes - Shop</title>
+      <title>Dreamy Cupcakes - Contact</title>
 
       <!-- CSS -->
       <link rel="stylesheet" href="../assets/css/base.css">

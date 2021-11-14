@@ -75,6 +75,7 @@ ul{
 }
 
 button{
+  font-family: lato;
   cursor: pointer;
   border: none;
   background-color: var(--purple);

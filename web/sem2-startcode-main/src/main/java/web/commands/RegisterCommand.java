@@ -1,20 +1,22 @@
 package web.commands;
 
 import business.entities.User;
+import business.entities.User2;
 import business.persistence.Database;
 import business.services.UserFacade;
 import business.exceptions.UserException;
+import business.services.UserFacade2;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class RegisterCommand extends CommandUnprotectedPage {
-    private UserFacade userFacade;
+    private UserFacade2 userFacade;
 
     public RegisterCommand(String pageToShow) {
         super(pageToShow);
-        userFacade = new UserFacade(database);
+        userFacade = new UserFacade2(database);
     }
 
     @Override
@@ -24,7 +26,7 @@ public class RegisterCommand extends CommandUnprotectedPage {
         String password2 = request.getParameter("password2");
 
         if (password1.equals(password2)) {
-            User user = userFacade.createUser(email, password1);
+            User2 user = userFacade.createUser(email, password1);
             HttpSession session = request.getSession();
 
             session.setAttribute("email", email);
