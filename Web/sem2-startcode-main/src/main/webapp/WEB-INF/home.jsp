@@ -25,11 +25,9 @@
       <div id="wrapper">
          <!-- header include -->
          <%@include file="includes/header.txt"%>
-         <!-- header include END -->
 
          <!-- guest/customer nav include -->
          <%@include file="includes/nav.txt"%>
-         <!-- guest/customer nav include END -->
 
          <main>
             <section id="welcomeSection" class="sitePreview posRelative">

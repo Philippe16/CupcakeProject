@@ -31,11 +31,9 @@ public class LoginCommand extends CommandUnprotectedPage {
             session.setAttribute("email", email);
 
             String pageToShow = "home";
-            System.out.println("Logged in!!!"); // DELETE LATER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             return REDIRECT_INDICATOR + pageToShow;
         } catch (UserException ex) {
             request.setAttribute("error", "Wrong username or password!");
-            System.out.println("Something went wrong!!!"); // DELETE LATER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             ex.printStackTrace();
             return "signIn";
         }
