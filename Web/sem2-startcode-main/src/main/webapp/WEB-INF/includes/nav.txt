@@ -20,10 +20,10 @@
       <div id="navIcon_container" class="flexRow">
          <div id="accountIcon_container" class="navIconItem flexRow">
             <div id="acountIconTxt_container">
-               Sign in / Sign up
+               Sign in / Sign up ${sessionScope.email}
             </div>
 
-            <a href="signIn.html">
+            <a href="signIn">
                <i class="navIcon fas fa-user-circle"></i>
             </a>
          </div>
