@@ -7,6 +7,14 @@ main{
   padding: 0 2.5%;
 }
 
+main a{
+  color: var(--white);
+}
+
+main a:visited{
+  color: var(--white);
+}
+
 .sitePreview{
   margin: 20px 0;
 }
