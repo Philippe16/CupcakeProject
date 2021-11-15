@@ -1,93 +1,69 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html lang="en">
 
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Dreamy Cupcakes - Sign Up</title>
+    <title>Dreamy Cupcakes - Sign Un</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/footer.css">
-    <link rel="stylesheet" href="../assets/css/signUp.css">
+    <link rel="stylesheet" href="../assets/css/signIn.css">
+
     <!-- Fonts -->
     <script src="https://kit.fontawesome.com/ca25e16baf.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 <div id="wrapper">
+    <!-- Include header -->
     <%@include file="includes/header.txt"%>
 
     <main>
-
         <section class="form_section_container posRelative">
             <div class="form_title_container posAbsolute">
-                <h2 class="form_title">Sign Up</h2>
+                <h2 class="form_title">Sign Un</h2>
             </div>
 
-            <div class="standardForm">
-
-
-                <form action="signUpCommand" method="post">
-
-
+            <div class="standardForm_container">
+                <form action="signUpCommand" method="POST">
                     <div class="signInFormSection">
-
-                        <label for="firstName">First Name:</label><br>
-                        <input name="firstName" id="firstName" type="text">
-                    </div>
-
-                    <div class="signInFormSection">
-
-                        <label for="lastName">Last Name:</label> <br>
-                        <input name="lastName" id="lastName" type="text">
-                    </div>
-
-                    <div class="signInFormSection">
-
                         <label for="email">Email:</label> <br>
-                        <input name="email" id="email" type="text">
+                        <input id="email" name="email" type="text">
                     </div>
-
 
                     <div class="signInFormSection">
-
                         <label for="password">Password:</label> <br>
-                        <input name="password" id="password" type="password">
+                        <input id="password" name="password" type="text">
                     </div>
 
-
-
-                    <div class="sumbitButtonContainer">
-
-                        <button class="loginBtn" type="submit">Sign Up</button>
-
+                    <div class="formBtn_container">
+                        <button id="loginBtn" class="btn" type="submit">Login</button>
                     </div>
-
-
-
-                    <div class="goToLogin">
-                        <p>Already have an account?</p>
-                        <a href="signIn">Go to login</a>
-                    </div>
-
                 </form>
 
-            </div>
+                <div class = signUpLink_container>
+                    <p>No account yet?</p>
+                    <a class="signUpLink" href="signUp">Create an account</a>
+                </div>
+            </div> <!-- .standardForm_container END -->
         </section>
 
-        <button class="homeBtn" type="button">
-            <i class="ArrowRight fas fa-arrow-left"></i>
-            <a href="home.html">Back</a>
-        </button>
-
-
+        <div class="backBtn_container">
+            <button class="btn" type="button">
+                <i class="backIcon fas fa-arrow-left"></i>
+                <a href="home">Back</a>
+            </button>
+        </div>
     </main>
+
     <!--Footer include -->
     <%@include file="includes/footer.txt"%>
-
 </div> <!-- #wrapper END -->
 </body>
 </html>

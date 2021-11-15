@@ -10,10 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class signUpCommand extends CommandUnprotectedPage {
+public class signUpCommandz extends CommandUnprotectedPage {
     private UserFacade userFacade;
 
-    public signUpCommand(String pageToShow) {
+    public signUpCommandz(String pageToShow) {
         super(pageToShow);
         userFacade = new UserFacade(database);
     }
