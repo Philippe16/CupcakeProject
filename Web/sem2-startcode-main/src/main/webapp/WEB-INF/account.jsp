@@ -81,5 +81,7 @@
             <!--Footer include -->
             <%@include file="includes/footer.txt"%>
         </div> <!-- #wrapper END -->
+
+        <script src="../assets/js/menu_mobile.js"></script>
     </body>
 </html>

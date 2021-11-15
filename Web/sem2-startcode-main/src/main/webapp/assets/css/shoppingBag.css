@@ -1,0 +1,93 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@import url("base.css");
+
+.form_section_container{
+   margin: 50px 15%;
+   padding: 50px 10px;
+   border: 4px var(--mint) solid;
+}
+
+.form_title_container{
+   top: 0;
+   width: 20%;
+   margin-left: 40%;
+   margin-right: 40%;
+   padding: 20px 10px;
+   background-color: var(--white);
+   text-align: center;
+}
+
+.form_title{
+   display: inline;
+   font-family: the_humble_script;
+   font-size: 1.8em;
+   color: var(--purple);
+}
+
+.standardForm{
+   border: 2px var(--mint) solid;
+   width: 98%;
+   margin: 0 auto;
+   padding: 10px 15px;
+}
+
+#cartItem_table{
+   margin: 30px auto;
+}
+
+#cartItem_table th{
+   padding-bottom: 10px;
+   text-decoration: underline;
+   text-decoration-color: var(--purple);
+   text-underline-offset: 5px;
+   color: var(--grey);
+}
+
+#cartItem_table th:nth-child(1), #cartItem_table td:nth-child(1), #cartItem_table td:nth-child(2){
+   width: 25%;
+}
+
+#cartItem_table td:nth-child(3), #cartItem_table td:nth-child(4), #cartItem_table td:nth-child(4){
+   width: 20%;
+}
+
+#cartItem_table tr:nth-last-child(1) td{
+   padding-top: 50px;
+}
+
+#cartItem_table td{
+   padding: 10px 0;
+}
+
+#cartItem_table .thNoUnderline{
+   border-bottom: none;
+}
+
+#cartItem_table .removeIcon{
+   color: var(--mint);
+   font-size: 1.5em;
+}
+
+#cartItem_table .removeIcon:hover{
+   cursor: pointer;
+}
+
+.centeredTd{
+   text-align: center;
+}
+
+.standardBtn_container{
+   text-align: center;
+}
+
+.standardBtn{
+   margin: 10px 0;
+   padding: 10px 25px;
+   border-radius: 10px;
+   background-color: var(--purple);
+   font-family: lato;
+   font-size: 1.2em;
+   color: var(--white);
+}
