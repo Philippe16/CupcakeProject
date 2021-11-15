@@ -36,6 +36,7 @@ public abstract class Command {
         commands.put("addToBasketCommand", new AddToBasketCommand(""));
 
 
+        /* To be deleted later */
         commands.put("loginpage", new CommandUnprotectedPage("loginpage"));
         commands.put("logincommand", new LoginCommandz(""));
         commands.put("registerpage", new CommandUnprotectedPage("registerpage"));
