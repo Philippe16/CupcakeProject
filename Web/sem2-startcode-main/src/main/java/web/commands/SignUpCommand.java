@@ -20,21 +20,20 @@ public class SignUpCommand extends CommandUnprotectedPage {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException {
-        System.out.println("jnakdgjadjgk");
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
-            User user = userFacade.createUser(firstName, lastName, email, password, 0.0, "customer");
-        System.out.println("ajbjka");
-            HttpSession session = request.getSession();
+        User user = userFacade.createUser(firstName, lastName, email, password, 0.0, "customer");
 
-            session.setAttribute("email", email);
-            session.setAttribute("user", user);
-            session.setAttribute("role", user.getRole());
-        System.out.println("jangjad");
-            return "home";
+        HttpSession session = request.getSession();
+
+        session.setAttribute("email", email);
+        session.setAttribute("user", user);
+        session.setAttribute("role", user.getRole());
+
+        return "home";
 
     }
 
