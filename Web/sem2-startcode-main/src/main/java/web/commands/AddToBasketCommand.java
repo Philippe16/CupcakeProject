@@ -1,6 +1,8 @@
 package web.commands;
 
 
+import business.entities.CupcakeShop;
+import business.entities.CupcakeTopping;
 import business.exceptions.UserException;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,10 +16,11 @@ public class AddToBasketCommand extends CommandUnprotectedPage{
 
    @Override
    public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException {
-      String cupcakeTopping = request.getParameter("email");
-      String cupcakeFlavor = request.getParameter("password");
-      int amount = Integer.parseInt(request.getParameter("amount"));
-      double pricePrCupcake;
+      int cupcakeToppingId = Integer.parseInt(request.getParameter("cupcakeTopping"));
+      int cupcakeFlavorId = Integer.parseInt(request.getParameter("cupcakeFlavor"));
+      int amount = Integer.parseInt(request.getParameter("amountOfCupcakes"));
+
+
 
       HttpSession session = request.getSession();
 

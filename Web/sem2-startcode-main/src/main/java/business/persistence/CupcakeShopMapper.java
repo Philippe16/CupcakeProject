@@ -7,21 +7,22 @@ import business.exceptions.UserException;
 
 import java.util.ArrayList;
 
-public class ShopMapper {
+public class CupcakeShopMapper {
    private Database database;
    private CupcakeToppingMapper cupcakeToppingMapper;
    private CupcakeFlavorMapper cupcakeFlavorMapper;
 
-   public ShopMapper(Database database) {
+   public CupcakeShopMapper(Database database) {
       this.database = database;
       cupcakeToppingMapper = new CupcakeToppingMapper(database);
       cupcakeFlavorMapper = new CupcakeFlavorMapper(database);
    }
 
-   public CupcakeShop getCupcakeShopContent() throws UserException {
+   public void getCupcakeShopContent() throws UserException {
       ArrayList<CupcakeTopping> cupcakeToppings = cupcakeToppingMapper.getAllCupcakeToppings();
       ArrayList<CupcakeFlavor> cupcakeFlavors = cupcakeFlavorMapper.getAllCupcakeFlavors();
 
-      return new CupcakeShop(cupcakeToppings, cupcakeFlavors);
+      CupcakeShop.setCupcakeToppings(cupcakeToppings);
+      CupcakeShop.setCupcakeFlavors(cupcakeFlavors);
    }
 }

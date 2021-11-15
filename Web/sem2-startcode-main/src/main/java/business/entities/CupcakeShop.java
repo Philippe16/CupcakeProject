@@ -5,27 +5,27 @@ import java.util.ArrayList;
 public class CupcakeShop {
 
    public CupcakeShop(ArrayList<CupcakeTopping> cupcakeToppings, ArrayList<CupcakeFlavor> cupcakeFlavors){
-      this.cupcakeToppings = cupcakeToppings;
-      this.cupcakeFlavors = cupcakeFlavors;
+      CupcakeShop.cupcakeToppings = cupcakeToppings;
+      CupcakeShop.cupcakeFlavors = cupcakeFlavors;
    }
 
-   private ArrayList<CupcakeTopping> cupcakeToppings;
-   private ArrayList<CupcakeFlavor> cupcakeFlavors;
+   private static ArrayList<CupcakeTopping> cupcakeToppings;
+   private static ArrayList<CupcakeFlavor> cupcakeFlavors;
 
-   public ArrayList<CupcakeTopping> getCupcakeToppings() {
+   public static ArrayList<CupcakeTopping> getCupcakeToppings() {
       return cupcakeToppings;
    }
 
-   public void setCupcakeToppings(ArrayList<CupcakeTopping> cupcakeToppings) {
-      this.cupcakeToppings = cupcakeToppings;
+   public static void setCupcakeToppings(ArrayList<CupcakeTopping> cupcakeToppings) {
+      CupcakeShop.cupcakeToppings = cupcakeToppings;
    }
 
-   public ArrayList<CupcakeFlavor> getCupcakeFlavors() {
+   public static ArrayList<CupcakeFlavor> getCupcakeFlavors() {
       return cupcakeFlavors;
    }
 
-   public void setCupcakeFlavors(ArrayList<CupcakeFlavor> cupcakeFlavors) {
-      this.cupcakeFlavors = cupcakeFlavors;
+   public static void setCupcakeFlavors(ArrayList<CupcakeFlavor> cupcakeFlavors) {
+      CupcakeShop.cupcakeFlavors = cupcakeFlavors;
    }
 
 }

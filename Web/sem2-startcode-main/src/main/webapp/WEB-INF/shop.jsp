@@ -56,7 +56,7 @@
                            <select id="cupcakeFlavorInput" class="cupcakeSelect" name="cupcakeFlavor">
                               <option value="" disabled selected>Select a flavor</option>
 
-                              <c:forEach items="${sessionScope.cupcakeShop.cupcakeFlavors}" var="flavor">
+                              <c:forEach items="${sessionScope.cupcakeFlavors}" var="flavor">
                                  <option value="${flavor.id}">${flavor.name}</option>
                               </c:forEach>
                            </select>
@@ -70,7 +70,7 @@
                            <select id="cupcakeToppingInput" class="cupcakeSelect" name="cupcakeTopping">
                               <option value="" disabled selected>Select a topping</option>
 
-                              <c:forEach items="${sessionScope.cupcakeShop.cupcakeToppings}" var="topping">
+                              <c:forEach items="${sessionScope.cupcakeToppings}" var="topping">
                                  <option value="${topping.id}">${topping.name}</option>
                               </c:forEach>
                            </select>
@@ -118,7 +118,7 @@
                         <th>Price</th>
                      </tr>
 
-                     <c:forEach items="${sessionScope.cupcakeShop.cupcakeFlavors}" var="flavor">
+                     <c:forEach items="${sessionScope.cupcakeFlavors}" var="flavor">
                         <tr>
                            <td>${flavor.name}</td>
                            <td>${flavor.price}</td>
@@ -136,7 +136,7 @@
                         <th>Price</th>
                      </tr>
 
-                     <c:forEach items="${sessionScope.cupcakeShop.cupcakeToppings}" var="topping">
+                     <c:forEach items="${sessionScope.cupcakeToppings}" var="topping">
                         <tr>
                            <td>${topping.name}</td>
                            <td>${topping.price}</td>
