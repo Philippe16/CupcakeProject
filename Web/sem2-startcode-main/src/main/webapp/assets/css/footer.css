@@ -10,6 +10,18 @@ footer{
   color: var(--white);
 }
 
+footer a{
+  color: var(--white);
+}
+
+footer a:visited{
+  color: var(--white);
+}
+
+footer a:hover{
+  color: var(--purple);
+}
+
 #infoSection_container{
   width: 65%;
   justify-content: space-between;
@@ -58,9 +70,17 @@ footer{
   font-size: 2.7em;
 }
 
-.socialMediaIcon_container a:hover{
-  color: var(--purple);
-}
+/*.socialMediaIcon_container a{*/
+/*  color: var(--purple);*/
+/*}*/
+
+/*.socialMediaIcon_container a:visited{*/
+/*  color: var(--purple);*/
+/*}*/
+
+/*.socialMediaIcon_container a:hover{*/
+/*  color: var(--purple);*/
+/*}*/
 /*----------------------------- Social media section END ----------------------------*/
 
 @media only screen and (max-width: 1170px) {

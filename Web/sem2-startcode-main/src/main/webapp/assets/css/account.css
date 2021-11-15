@@ -1,0 +1,104 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@import url("base.css");
+
+.pageTitle_container{
+    margin: 25px 0;
+    font-family: the_humble_script;
+    font-size: 1.7em;
+    color: var(--purple);
+    text-align: center;
+}
+
+.accountIcon_container{
+    text-align: center;
+    font-size: 10em;
+    color: var(--grey);
+}
+
+#userEmail_container{
+    margin-top: 10px;
+    text-align: center;
+}
+
+#userName_container{
+    width: 20%;
+    margin: 10px auto;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.balanceContainer{
+    text-align: center;
+}
+
+.balanceTitle_container{
+    margin: 25px auto;
+    text-align: center;
+}
+
+.balanceOuterContainer{
+    width: 180px;
+    height: 70px;
+    margin: 0 auto;
+    padding: 3px 5px;
+    border: 3px var(--mint) solid;
+}
+
+.balanceInnerContainer{
+    width: 150px;
+    height: 50px;
+    margin: 3px auto;
+    border: 1px var(--mint) solid;
+    padding: 15px 3px;
+    text-align: center;
+    align-items: center;
+}
+
+#viewAllOrders_container{
+    margin: 25px auto;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+#viewAllOrders_container a{
+    color: var(--grey);
+}
+
+#viewAllOrders_container a:visited{
+    color: var(--grey);
+}
+
+.purple{
+    color: var(--purple);
+}
+
+
+#logoutContainer{
+    padding: 10px 20px;
+    border-radius: 15px;
+    background-color: var(--purple);
+    text-align: center;
+    font-size: 1.1em;
+    color: var(--white);
+}
+
+.accountBalanceInfo{
+    text-align: right;
+}
+
+/*.form_section_container{*/
+/*    width: 35%;*/
+/*    margin: 50px auto;*/
+/*    padding: 50px 10px;*/
+/*    border: 4px var(--mint) solid;*/
+/*}*/
+
+/*.standardForm_container{*/
+/*    border: 2px var(--mint) solid;*/
+/*    width: 98%;*/
+/*    margin: 0 auto;*/
+/*    padding: 50px 15px;*/
+/*}*/
+

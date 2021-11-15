@@ -14,6 +14,18 @@ nav{
   color: var(--white);
 }
 
+nav a{
+  color: var(--white);
+}
+
+nav a:visited{
+  color: var(--white);
+}
+
+nav a:hover{
+  color: var(--purple);
+}
+
 /*------------------------------------ Desktop menu ---------------------------------*/
 #menu_desktop, #navIcon_container{
   width: 50%;

@@ -20,7 +20,7 @@ public class AddToBasketCommand extends CommandUnprotectedPage{
       double pricePrCupcake;
 
       HttpSession session = request.getSession();
-      
+
       session.setAttribute("addedToBasketMsg", "Delicious cupcakes were added to basket!");
 
       String pageToShow = "shop";

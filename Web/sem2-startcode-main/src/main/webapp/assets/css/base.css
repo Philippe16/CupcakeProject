@@ -53,14 +53,13 @@ body{
   width: 100%;
 }
 
+h2 {
+  font-weight: normal;
+}
+
 a{
   cursor: pointer;
   text-decoration: none;
-  color: var(--white);
-}
-
-a:visited{
-  color: var(--white);
 }
 
 p{

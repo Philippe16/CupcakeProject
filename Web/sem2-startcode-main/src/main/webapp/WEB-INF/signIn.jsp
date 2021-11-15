@@ -39,7 +39,7 @@
 
                      <div class="inputSection">
                         <label for="password">Password:</label> <br>
-                        <input id="password" name="password" type="text">
+                        <input id="password" name="password" type="password">
                      </div>
 
                      <div class="formBtn_container">
