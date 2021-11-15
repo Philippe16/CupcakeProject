@@ -17,6 +17,6 @@ public class LogoutCommand extends CommandUnprotectedPage {
         if(session != null){
             session.invalidate();
         }
-        return REDIRECT_INDICATOR + request.getContextPath();
+        return REDIRECT_INDICATOR + "home";
     }
 }

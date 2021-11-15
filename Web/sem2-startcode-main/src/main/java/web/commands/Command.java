@@ -31,13 +31,13 @@ public abstract class Command {
         /* Functionality commands */
         commands.put("signUpCommand", new SignUpCommand(""));
         commands.put("loginCommand", new LoginCommand(""));
+        commands.put("logoutcommand", new LogoutCommand(""));
         commands.put("shopCommand", new ShopCommand(""));
         commands.put("addToBasketCommand", new AddToBasketCommand(""));
 
 
         commands.put("loginpage", new CommandUnprotectedPage("loginpage"));
         commands.put("logincommand", new LoginCommandz(""));
-        commands.put("logoutcommand", new LogoutCommand(""));
         commands.put("registerpage", new CommandUnprotectedPage("registerpage"));
         commands.put("registercommand", new RegisterCommand(""));
         commands.put("customerpage", new CommandProtectedPage("customerpage", "customer"));
