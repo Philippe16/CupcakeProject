@@ -36,7 +36,6 @@ public class CupcakeToppingMapper {
                   cupcakeTopping.setId(id);
                   cupcakeToppings.add(cupcakeTopping);
                }
-
                return cupcakeToppings;
             } else {
                throw new UserException("Could not get cupcake topping data from the database");

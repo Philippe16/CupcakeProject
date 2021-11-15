@@ -13,7 +13,7 @@
       <!-- CSS -->
       <link rel="stylesheet" href="../assets/css/base.css">
       <link rel="stylesheet" href="../assets/css/footer.css">
-      <link rel="stylesheet" href="../assets/css/signIn.css">
+      <link rel="stylesheet" href="../assets/css/sign.css">
 
       <!-- Fonts -->
       <script src="https://kit.fontawesome.com/ca25e16baf.js" crossorigin="anonymous"></script>
@@ -32,12 +32,12 @@
 
                <div class="standardForm_container">
                   <form action="loginCommand" method="POST">
-                     <div class="signInFormSection">
+                     <div class="inputSection">
                         <label for="email">Email:</label> <br>
                         <input id="email" name="email" type="text">
                      </div>
 
-                     <div class="signInFormSection">
+                     <div class="inputSection">
                         <label for="password">Password:</label> <br>
                         <input id="password" name="password" type="text">
                      </div>
@@ -47,7 +47,7 @@
                      </div>
                   </form>
 
-                  <div class = signUpLink_container>
+                  <div class="signUpLink_container">
                      <p>No account yet?</p>
                      <a class="signUpLink" href="signUp">Create an account</a>
                   </div>

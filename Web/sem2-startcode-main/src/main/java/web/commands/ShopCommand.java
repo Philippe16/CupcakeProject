@@ -1,12 +1,14 @@
 package web.commands;
 
-import business.entities.Shop;
+import business.entities.CupcakeFlavor;
+import business.entities.CupcakeShop;
 import business.exceptions.UserException;
 import business.services.ShopFacade;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 
 public class ShopCommand extends CommandUnprotectedPage {
    private ShopFacade shopFacade;
@@ -19,7 +21,7 @@ public class ShopCommand extends CommandUnprotectedPage {
    @Override
    public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException {
       try {
-         Shop cupcakeShop = shopFacade.getCupcakeShopContent();
+         CupcakeShop cupcakeShop = shopFacade.getCupcakeShopContent();
 
          HttpSession session = request.getSession();
 

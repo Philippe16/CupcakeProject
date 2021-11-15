@@ -1,19 +1,19 @@
 <nav class="flexRow posRelative">
       <div id="menu_desktop" class="flexRow">
          <div class="menuItem_desktop">
-            <a class="menuItem_link_desktop" href="home.html">Home</a>
+            <a class="menuItem_link_desktop" href="home">Home</a>
          </div>
 
          <div class="menuItem_desktop">
-            <a class="menuItem_link_desktop" href="about.html">About</a>
+            <a class="menuItem_link_desktop" href="about">About</a>
          </div>
 
          <div class="menuItem_desktop">
-            <a class="menuItem_link_desktop" href="shop.html">Shop</a>
+            <a class="menuItem_link_desktop" href="shopCommand">Shop</a>
          </div>
 
          <div class="menuItem_desktop">
-            <a class="menuItem_link_desktop" href="contact.html">Contact</a>
+            <a class="menuItem_link_desktop" href="contact">Contact</a>
          </div>
       </div> <!-- #menu_desktop END -->
 
@@ -43,7 +43,7 @@
          </div>
 
          <div id="shoppingCartIcon_container" class="navIconItem">
-            <a href="shoppingCart.html">
+            <a href="shopping-basket">
                <i class="navIcon fas fa-shopping-basket"></i>
             </a>
          </div>
@@ -55,25 +55,25 @@
 
       <div id="menu_mobile_container" class="posAbsolute" style="display: none; opacity: 0">
          <div class="menuItem_mobile">
-            <a class="menuItem_link" href="home.html">
+            <a class="menuItem_link" href="home">
                Home
             </a>
          </div>
 
          <div class="menuItem_mobile">
-            <a class="menuItem_link" href="about.html">
+            <a class="menuItem_link" href="about">
                About
             </a>
          </div>
 
          <div class="menuItem_mobile">
-            <a class="menuItem_link" href="shop.html">
+            <a class="menuItem_link" href="shopCommand">
                Shop
             </a>
          </div>
 
          <div class="menuItem_mobile">
-            <a class="menuItem_link" href="contact.html">
+            <a class="menuItem_link" href="contact">
                Contact
             </a>
          </div>

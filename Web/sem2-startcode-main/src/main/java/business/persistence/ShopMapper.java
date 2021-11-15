@@ -1,7 +1,7 @@
 package business.persistence;
 
 import business.entities.CupcakeFlavor;
-import business.entities.Shop;
+import business.entities.CupcakeShop;
 import business.entities.CupcakeTopping;
 import business.exceptions.UserException;
 
@@ -14,14 +14,14 @@ public class ShopMapper {
 
    public ShopMapper(Database database) {
       this.database = database;
+      cupcakeToppingMapper = new CupcakeToppingMapper(database);
+      cupcakeFlavorMapper = new CupcakeFlavorMapper(database);
    }
 
-   public Shop getCupcakeShopContent() throws UserException {
+   public CupcakeShop getCupcakeShopContent() throws UserException {
       ArrayList<CupcakeTopping> cupcakeToppings = cupcakeToppingMapper.getAllCupcakeToppings();
       ArrayList<CupcakeFlavor> cupcakeFlavors = cupcakeFlavorMapper.getAllCupcakeFlavors();
 
-      Shop cupcakeShop = new Shop(cupcakeToppings, cupcakeFlavors);
-
-      return cupcakeShop;
+      return new CupcakeShop(cupcakeToppings, cupcakeFlavors);
    }
 }

@@ -1,7 +1,7 @@
 package web;
 
 import business.entities.CupcakeFlavor;
-import business.entities.Shop;
+import business.entities.CupcakeShop;
 import business.entities.CupcakeTopping;
 import business.exceptions.UserException;
 import business.persistence.Database;
@@ -28,7 +28,7 @@ public class FrontController extends HttpServlet
     private final static String URL = "jdbc:mysql://localhost:3306/dreamycupcakesdb?serverTimezone=CET";
 
     public static Database database;
-    public static Shop cupcakeShop;
+    public static CupcakeShop cupcakeShop;
 
     public void init() throws ServletException {
         // Initialize database connection
@@ -49,7 +49,7 @@ public class FrontController extends HttpServlet
                 CupcakeFlavorFacade cupcakeFlavorFacade = new CupcakeFlavorFacade(database);
                 ArrayList<CupcakeFlavor> cupcakeFlavors = cupcakeFlavorFacade.getAllCupcakeFlavors();
 
-                cupcakeShop = new Shop(cupcakeToppings, cupcakeFlavors);
+                cupcakeShop = new CupcakeShop(cupcakeToppings, cupcakeFlavors);
 
             }catch(UserException ex){
                 Logger.getLogger("web").log(Level.SEVERE, ex.getMessage(), ex);

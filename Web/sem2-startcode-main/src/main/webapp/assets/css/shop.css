@@ -1,0 +1,146 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@import url("base.css");
+
+.form_section_container{
+   margin: 50px 10%;
+   padding: 50px 10px;
+   border: 4px var(--mint) solid;
+}
+
+.form_title_container{
+   top: 0;
+   width: 30%;
+   margin-left: 35%;
+   margin-right: 35%;
+   padding: 20px 15px;
+   background-color: var(--white);
+   text-align: center;
+}
+
+.form_title{
+   display: inline;
+   margin: 0 auto;
+   font-family: the_humble_script;
+   font-size: 1.8em;
+   color: var(--purple);
+}
+
+.standardForm_container{
+   border: 2px var(--mint) solid;
+   width: 98%;
+   margin: 0 auto;
+   padding: 50px 3%;
+}
+
+.howTo{
+   margin-bottom: 50px;
+   font-size: 1.3em;
+   color: var(--purple);
+}
+
+#selectFlexContainer{
+   justify-content: space-between;
+}
+
+.selectContainer{
+   font-size: 1.2em;
+}
+
+.label_container{
+   margin-bottom: 5px;
+}
+
+.cupcakeSelect{
+   height: 35px;
+   cursor: pointer;
+   background-color: var(white);
+   border: 1px var(--grey) solid;
+   padding: 0 1em 0 0;
+   margin: 0;
+   width: 100%;
+   font-family: inherit;
+   font-size: .9em;
+   line-height: inherit;
+   outline: none;
+   min-width: 15ch;
+   max-width: 60ch;
+}
+
+select::-ms-expand {
+   display: none;
+}
+
+#msgBtn_container{
+   margin-top: 40px;
+   justify-content: space-between;
+   align-items: center;
+   flex-wrap: wrap;
+}
+
+#addToBasketBtn_container{
+   text-align: right;
+   padding: 10px 0;
+}
+
+#addToBasket_btn{
+   padding: 10px 15px;
+   border-radius: 10px;
+   background-color: var(--purple);
+   color: white;
+   font-size: 1.1em;
+}
+
+#shopMsg_container{
+   padding: 10px 0;
+   text-align: left;
+}
+
+.orderAddedIcon{
+   color: var(--mint);
+}
+
+.orderAdded{
+   color: var(--purple);
+   font-size: 1.7em;
+}
+
+.table_container{
+   width: 80%;
+   margin: 0 auto;
+   margin-bottom: 50px;
+}
+
+.tableTitel{
+   font-family: the_humble_script;
+}
+
+#flavorTable, #toppingTable{
+   border-collapse: collapse;
+   width: 100%;
+   background-color: var(--mint);
+}
+
+table th, table td{
+   width: 50%;
+}
+
+table td{
+   color: var(--grey);
+}
+
+td, th {
+   border: 1px solid #dddddd;
+   text-align: left;
+   padding: 8px;
+}
+
+tr:nth-child(even) {
+   background-color: var(--lightMint);
+}
+
+.tableTitel{
+   color: var(--purple);
+   margin-bottom: 20px;
+}
