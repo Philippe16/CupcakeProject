@@ -1,9 +1,9 @@
 package business.entities;
 
 public class Cupcake {
-   CupcakeTopping cupcakeTopping;
-   CupcakeFlavor cupcakeFlavor;
-   double price;
+   private CupcakeTopping cupcakeTopping;
+   private CupcakeFlavor cupcakeFlavor;
+   private double price;
 
    public Cupcake(CupcakeTopping cupcakeTopping, CupcakeFlavor cupcakeFlavor){
       this.cupcakeTopping = cupcakeTopping;
@@ -25,5 +25,13 @@ public class Cupcake {
 
    public void setCupcakeFlavor(CupcakeFlavor cupcakeFlavor) {
       this.cupcakeFlavor = cupcakeFlavor;
+   }
+
+   public double getPrice() {
+      return price;
+   }
+
+   public void setPrice(double price) {
+      this.price = price;
    }
 }
