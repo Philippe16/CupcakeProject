@@ -112,7 +112,7 @@ select::-ms-expand {
    margin-bottom: 50px;
 }
 
-.tableTitel{
+.tableTitle{
    font-family: the_humble_script;
 }
 
@@ -140,7 +140,7 @@ tr:nth-child(even) {
    background-color: var(--lightMint);
 }
 
-.tableTitel{
+.tableTitle{
    color: var(--purple);
    margin-bottom: 20px;
 }

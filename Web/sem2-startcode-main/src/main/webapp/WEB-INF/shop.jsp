@@ -108,7 +108,7 @@
 
             <section>
                <div class="table_container">
-                  <h2 class="tableTitel">Cupcake flavors</h2>
+                  <h2 class="tableTitle">Cupcake flavors</h2>
 
                   <table id="flavorTable">
                      <tr>
@@ -126,7 +126,7 @@
                </div>
 
                <div class="table_container">
-                  <h2 class="tableTitel">Cupcake toppings</h2>
+                  <h2 class="tableTitle">Cupcake toppings</h2>
 
                   <table id="toppingTable">
                      <tr>
@@ -150,3 +150,4 @@
       </div> <!-- #wrapper END -->
    </body>
 </html>
+
