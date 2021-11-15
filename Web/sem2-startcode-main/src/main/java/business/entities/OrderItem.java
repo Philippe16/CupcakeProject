@@ -1,10 +1,12 @@
 package business.entities;
 
 public class OrderItem {
-   Cupcake cupcake;
+   private Cupcake cupcake;
+   private int amount;
 
-   public OrderItem(Cupcake cupcake){
+   public OrderItem(Cupcake cupcake, int amount){
       this.cupcake = cupcake;
+      this.amount = amount;
    }
 
    public Cupcake getCupcake() {
@@ -14,4 +16,13 @@ public class OrderItem {
    public void setCupcake(Cupcake cupcake) {
       this.cupcake = cupcake;
    }
+
+   public int getAmount() {
+      return amount;
+   }
+
+   public void setAmount(int amount) {
+      this.amount = amount;
+   }
+
 }
