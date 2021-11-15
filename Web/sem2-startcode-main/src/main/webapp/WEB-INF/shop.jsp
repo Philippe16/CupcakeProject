@@ -44,7 +44,7 @@
                      6) When done, go to your basket <i class="basketIcon fas fa-shopping-basket"></i>
                   </div>
 
-                  <form action="shopCommand" method="POST">
+                  <form action="addToBasketCommand" method="POST">
                      <div id="selectFlexContainer" class="flexRow">
                         <div class="selectContainer">
                            <div class="label_container">
@@ -53,11 +53,10 @@
 
                            <select id="cupcakeFlavorInput" class="cupcakeSelect" name="cupcakeFlavor">
                               <option value="" disabled selected>Select a flavor</option>
-                              <option value="Chocolate">Chocolate</option> <!-- Change value to id -->
-                              <option value="Vanilla">Vanilla</option>
-                              <option value="Nutmeg">Nutmeg</option>
-                              <option value="Pistacio">Pistacio</option>
-                              <option value="Almond">Almond</option>
+
+                              <c:forEach items="${sessionScope.cupcakeShop.cupcakeFlavors}" var="flavor">
+                                 <option value="${flavor.id}">${flavor.name}</option>
+                              </c:forEach>
                            </select>
                         </div> <!-- .selectContainer END -->
 
@@ -68,24 +67,19 @@
 
                            <select id="cupcakeToppingInput" class="cupcakeSelect" name="cupcakeTopping">
                               <option value="" disabled selected>Select a topping</option>
-                              <option value="Chocolate">Chocolate</option>
-                              <option value="Blueberry">Blueberry</option>
-                              <option value="Rasberry">Rasberry</option>
-                              <option value="Crispy">Crispy</option>
-                              <option value="Strawberry">Strawberry</option>
-                              <option value="Rum/Raisin">Raisin</option>
-                              <option value="Orange">Orange</option>
-                              <option value="Lemon">Lemon</option>
-                              <option value="Blue cheese">Blue cheese</option>
+
+                              <c:forEach items="${sessionScope.cupcakeShop.cupcakeToppings}" var="topping">
+                                 <option value="${topping.id}">${topping.name}</option>
+                              </c:forEach>
                            </select>
                         </div> <!-- .selectContainer END -->
 
                         <div class="selectContainer">
                            <div class="label_container">
-                              <label for="cupcakenr">Cupcake amount</label>
+                              <label for="amountOfCupcakesInput">Cupcake amount</label>
                            </div>
 
-                           <select id="cupcakenr" class="cupcakeSelect"name="cupcakenr">
+                           <select id="amountOfCupcakesInput" class="cupcakeSelect" name="amountOfCupcakes">
                               <option value="" disabled selected>Select an amount</option>
                               <option value="2">2</option>
                               <option value="4">4</option>
