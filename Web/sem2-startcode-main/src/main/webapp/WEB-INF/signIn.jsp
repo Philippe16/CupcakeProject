@@ -45,12 +45,12 @@
                      <div class="formBtn_container">
                         <button id="loginBtn" class="btn" type="submit">Login</button>
                      </div>
-
-                     <div class = signUpLink_container>
-                        <p>No account yet?</p>
-                        <a class="signUpLink" href="signUp">Create an account</a>
-                     </div>
                   </form>
+
+                  <div class = signUpLink_container>
+                     <p>No account yet?</p>
+                     <a class="signUpLink" href="signUp">Create an account</a>
+                  </div>
                </div> <!-- .standardForm_container END -->
             </section>
 

@@ -1,11 +1,17 @@
 package web;
 
+import business.entities.CupcakeFlavor;
+import business.entities.Shop;
+import business.entities.CupcakeTopping;
 import business.exceptions.UserException;
 import business.persistence.Database;
+import business.services.CupcakeFlavorFacade;
+import business.services.CupcakeToppingFacade;
 import web.commands.*;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -22,6 +28,7 @@ public class FrontController extends HttpServlet
     private final static String URL = "jdbc:mysql://localhost:3306/dreamycupcakesdb?serverTimezone=CET";
 
     public static Database database;
+    public static Shop cupcakeShop;
 
     public void init() throws ServletException {
         // Initialize database connection
@@ -34,7 +41,20 @@ public class FrontController extends HttpServlet
         }
 
         // Initialize whatever global datastructures needed here:
+        if(FrontController.cupcakeShop == null){
+            try{
+                CupcakeToppingFacade cupcakeToppingFacade = new CupcakeToppingFacade(database);
+                ArrayList<CupcakeTopping> cupcakeToppings = cupcakeToppingFacade.getAllCupcakeToppings();
 
+                CupcakeFlavorFacade cupcakeFlavorFacade = new CupcakeFlavorFacade(database);
+                ArrayList<CupcakeFlavor> cupcakeFlavors = cupcakeFlavorFacade.getAllCupcakeFlavors();
+
+                cupcakeShop = new Shop(cupcakeToppings, cupcakeFlavors);
+
+            }catch(UserException ex){
+                Logger.getLogger("web").log(Level.SEVERE, ex.getMessage(), ex);
+            }
+        }
     }
 
     protected void processRequest(

@@ -18,14 +18,19 @@ public abstract class Command {
 
     private static void initCommands(Database database) {
         commands = new HashMap<>();
+        /* Website pages commands */
         commands.put("index", new CommandUnprotectedPage("index"));
         commands.put("home", new CommandUnprotectedPage("home"));
         commands.put("about", new CommandUnprotectedPage("about"));
         commands.put("shop", new CommandUnprotectedPage("shop"));
         commands.put("contact", new CommandUnprotectedPage("contact"));
-
         commands.put("signIn", new CommandUnprotectedPage("signIn"));
+        commands.put("signUp", new CommandUnprotectedPage("signUp"));
+
+        /* Functionality commands */
+        commands.put("signUpCommand", new signUpCommand(""));
         commands.put("loginCommand", new LoginCommand(""));
+        commands.put("shopCommand", new ShopCommand(""));
 
 
         commands.put("loginpage", new CommandUnprotectedPage("loginpage"));
