@@ -1,0 +1,81 @@
+<nav class="flexRow posRelative">
+      <div id="menu_desktop" class="flexRow">
+         <div class="menuItem_desktop">
+            <a class="menuItem_link_desktop" href="home.html">Home</a>
+         </div>
+
+         <div class="menuItem_desktop">
+            <a class="menuItem_link_desktop" href="about.html">About</a>
+         </div>
+
+         <div class="menuItem_desktop">
+            <a class="menuItem_link_desktop" href="shop.html">Shop</a>
+         </div>
+
+         <div class="menuItem_desktop">
+            <a class="menuItem_link_desktop" href="contact.html">Contact</a>
+         </div>
+      </div> <!-- #menu_desktop END -->
+
+      <div id="navIcon_container" class="flexRow">
+         <div id="accountIcon_container" class="navIconItem flexRow">
+            <div id="accountIconTxt_container">
+               <c:if test="${sessionScope.email == null }">
+                  Sign in / Sign up
+               </c:if>
+
+               <c:if test="${sessionScope.email != null }">
+                   ${sessionScope.email}
+                </c:if>
+            </div>
+
+            <c:if test="${sessionScope.email == null }">
+                <a href="signIn">
+                   <i class="navIcon fas fa-user-circle"></i>
+                </a>
+            </c:if>
+
+            <c:if test="${sessionScope.email != null }">
+                <a href="account">
+                   <i class="navIcon fas fa-user-circle"></i>
+                </a>
+             </c:if>
+         </div>
+
+         <div id="shoppingCartIcon_container" class="navIconItem">
+            <a href="shoppingCart.html">
+               <i class="navIcon fas fa-shopping-basket"></i>
+            </a>
+         </div>
+
+         <div id="menu_mobile" class="navIconItem">
+            <i class="navIcon fas fa-bars"></i>
+         </div>
+      </div> <!-- #navIcon_container END -->
+
+      <div id="menu_mobile_container" class="posAbsolute" style="display: none; opacity: 0">
+         <div class="menuItem_mobile">
+            <a class="menuItem_link" href="home.html">
+               Home
+            </a>
+         </div>
+
+         <div class="menuItem_mobile">
+            <a class="menuItem_link" href="about.html">
+               About
+            </a>
+         </div>
+
+         <div class="menuItem_mobile">
+            <a class="menuItem_link" href="shop.html">
+               Shop
+            </a>
+         </div>
+
+         <div class="menuItem_mobile">
+            <a class="menuItem_link" href="contact.html">
+               Contact
+            </a>
+         </div>
+      </div> <!-- menu_mobile_container END -->
+   </nav>

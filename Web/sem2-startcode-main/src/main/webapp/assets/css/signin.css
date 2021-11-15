@@ -1,0 +1,71 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@import url("base.css");
+
+.form_section_container{
+   width: 35%;
+   margin: 50px auto;
+   padding: 50px 10px;
+   border: 4px var(--mint) solid;
+}
+
+.standardForm_container{
+   border: 2px var(--mint) solid;
+   width: 98%;
+   margin: 0 auto;
+   padding: 50px 15px;
+}
+
+.form_title_container{
+   top: 0;
+   width: 25%;
+   margin-left: 37.5%;
+   margin-right: 37.5%;
+   padding: 20px 10px;
+   background-color: var(--white);
+   text-align: center;
+}
+
+.form_title{
+   display: inline;
+   font-family: the_humble_script;
+   font-size: 1.8em;
+   color: var(--purple);
+}
+
+.signInFormSection{
+   text-align: center;
+   margin-bottom: 25px;
+}
+
+.signUpLink_container{
+   margin-top:50px;
+   text-align: right;
+}
+
+.formBtn_container{
+   text-align: center;
+}
+
+.btn{
+   padding: 10px 20px;
+   border-radius: 15px;
+   background-color: var(--purple);
+   text-align: center;
+   font-size: 1.1em;
+   color: var(--white);
+}
+
+.signUpLink{
+   color: var(--grey);
+   text-decoration: underline;
+}
+
+.signUpLink:visited{
+   color: var(--grey);
+}
+
+.backBtn_container{
+   margin: 0 5%;
+}
