@@ -3,6 +3,10 @@
 
 @import url("base.css");
 
+main{
+    margin: 0 2.3%;
+}
+
 .pageTitle_container{
     margin: 25px 0;
     font-family: the_humble_script;
@@ -74,8 +78,9 @@
     color: var(--purple);
 }
 
-
 #logoutContainer{
+    width: 200px;
+    margin: 50px auto 40px;
     padding: 10px 20px;
     border-radius: 15px;
     background-color: var(--purple);
@@ -84,21 +89,18 @@
     color: var(--white);
 }
 
+#logoutContainer a{
+    color: var(--white);
+}
+
+#logoutContainer a:visited{
+    color: var(--white);
+}
+
 .accountBalanceInfo{
     text-align: right;
 }
 
-/*.form_section_container{*/
-/*    width: 35%;*/
-/*    margin: 50px auto;*/
-/*    padding: 50px 10px;*/
-/*    border: 4px var(--mint) solid;*/
-/*}*/
-
-/*.standardForm_container{*/
-/*    border: 2px var(--mint) solid;*/
-/*    width: 98%;*/
-/*    margin: 0 auto;*/
-/*    padding: 50px 15px;*/
-/*}*/
-
+.extraLineHeight{
+    line-height: 40px;
+}

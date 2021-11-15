@@ -66,12 +66,11 @@
                 </div>
 
                 <div id="logoutContainer">
-                    <a id="logoutCon" href ="LogoutCommand">Logout</a>
+                    <a id="logoutLink" href ="LogoutCommand">Logout</a>
                 </div>
 
                 <div class="accountBalanceInfo">
-                    <h3>Account Balance</h3>
-
+                    <span class="extraLineHeight">Account Balance*<br></span>
                     if you wish to add more to your balance, please contact the shop.<br>
                     Contact information can be found on the contact page at the bottom of the site
                 </div>
