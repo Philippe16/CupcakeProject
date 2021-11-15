@@ -2,6 +2,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+<c:set var="shoppingBagMsg" value="${requestScope.shoppingBagMsg}" scope="page" />
+
 <html>
    <head>
       <meta charset="UTF-8">
@@ -94,8 +96,15 @@
 
                      <div id="msgBtn_container" class="flexRow">
                         <div id="shopMsg_container" class="orderAdded">
-                           Delicious cupcakes were added to basket!
-                           <i class="orderAddedIcon far fa-check-circle"></i>
+                           <c:if test="${sessionScope.shoppingBagMsg != null }">
+                              ${sessionScope.shoppingBagMsg}
+
+                              <i class="orderAddedIcon far fa-check-circle"></i>
+
+                              <%
+                                 request.getSession().removeAttribute("shoppingBagMsg");
+                              %>
+                           </c:if>
                         </div>
 
                         <div id ="addToBasketBtn_container">

@@ -22,14 +22,14 @@ public class AddToBasketCommand extends CommandUnprotectedPage{
       CupcakeTopping cupcakeTopping = CupcakeShop.getCupcakeToppingById(cupcakeToppingId);
       CupcakeFlavor cupcakeFlavor = CupcakeShop.getCupcakeFlavorById(cupcakeFlavorId);
 
-      OrderItem orderItem = new OrderItem(new Cupcake(cupcakeTopping, cupcakeFlavor));
+      OrderItem orderItem = new OrderItem(new Cupcake(cupcakeTopping, cupcakeFlavor), amount);
 
       ShoppingBag.addOrderItemToShoppingBag(orderItem);
 
       HttpSession session = request.getSession();
 
       session.setAttribute("shoppingBagItems", ShoppingBag.getOrderItems());
-      session.setAttribute("addedToBasketMsg", "Delicious cupcakes were added to basket!");
+      session.setAttribute("shoppingBagMsg", "Delicious cupcakes were added to basket!");
 
       String pageToShow = "shop";
       return REDIRECT_INDICATOR + pageToShow;
