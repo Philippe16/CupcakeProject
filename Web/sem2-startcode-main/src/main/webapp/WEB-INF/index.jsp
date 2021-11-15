@@ -10,6 +10,8 @@
 
     <title>Dreamy Cupcakes</title>
 
+    <link rel="icon" type="image/png" href="../assets/images/logo_elements/favicon.png"/>
+
     <!-- CSS -->
     <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/base.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/index.css">

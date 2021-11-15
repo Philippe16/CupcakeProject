@@ -10,6 +10,8 @@
 
     <title>Dreamy Cupcakes - Sign Un</title>
 
+    <link rel="icon" type="image/png" href="../assets/images/logo_elements/favicon.png"/>
+
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/footer.css">
