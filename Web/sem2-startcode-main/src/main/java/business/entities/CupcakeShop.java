@@ -16,12 +16,38 @@ public class CupcakeShop {
       return cupcakeToppings;
    }
 
+   public static CupcakeTopping getCupcakeToppingById(int id) {
+      CupcakeTopping cupcakeToppingMatch = null;
+
+      for(CupcakeTopping cupcakeTopping : cupcakeToppings){
+         if(cupcakeTopping.getId() == id){
+            cupcakeToppingMatch = cupcakeTopping;
+            break;
+         }
+      }
+
+      return cupcakeToppingMatch;
+   }
+
    public static void setCupcakeToppings(ArrayList<CupcakeTopping> cupcakeToppings) {
       CupcakeShop.cupcakeToppings = cupcakeToppings;
    }
 
    public static ArrayList<CupcakeFlavor> getCupcakeFlavors() {
       return cupcakeFlavors;
+   }
+
+   public static CupcakeFlavor getCupcakeFlavorById(int id) {
+      CupcakeFlavor cupcakeFlavorMatch = null;
+
+      for(CupcakeFlavor cupcakeFlavor : cupcakeFlavors){
+         if(cupcakeFlavor.getId() == id){
+            cupcakeFlavorMatch = cupcakeFlavor;
+            break;
+         }
+      }
+
+      return cupcakeFlavorMatch;
    }
 
    public static void setCupcakeFlavors(ArrayList<CupcakeFlavor> cupcakeFlavors) {

@@ -1,8 +1,7 @@
 package web.commands;
 
 
-import business.entities.CupcakeShop;
-import business.entities.CupcakeTopping;
+import business.entities.*;
 import business.exceptions.UserException;
 
 import javax.servlet.http.HttpServletRequest;
@@ -20,10 +19,16 @@ public class AddToBasketCommand extends CommandUnprotectedPage{
       int cupcakeFlavorId = Integer.parseInt(request.getParameter("cupcakeFlavor"));
       int amount = Integer.parseInt(request.getParameter("amountOfCupcakes"));
 
+      CupcakeTopping cupcakeTopping = CupcakeShop.getCupcakeToppingById(cupcakeToppingId);
+      CupcakeFlavor cupcakeFlavor = CupcakeShop.getCupcakeFlavorById(cupcakeFlavorId);
 
+      OrderItem orderItem = new OrderItem(new Cupcake(cupcakeTopping, cupcakeFlavor));
+
+      ShoppingBag.addOrderItemToShoppingBag(orderItem);
 
       HttpSession session = request.getSession();
 
+      session.setAttribute("shoppingBagItems", ShoppingBag.getOrderItems());
       session.setAttribute("addedToBasketMsg", "Delicious cupcakes were added to basket!");
 
       String pageToShow = "shop";

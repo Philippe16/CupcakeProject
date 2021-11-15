@@ -3,10 +3,12 @@ package business.entities;
 public class Cupcake {
    CupcakeTopping cupcakeTopping;
    CupcakeFlavor cupcakeFlavor;
+   double price;
 
-   Cupcake(CupcakeTopping cupcakeTopping, CupcakeFlavor cupcakeFlavor){
+   public Cupcake(CupcakeTopping cupcakeTopping, CupcakeFlavor cupcakeFlavor){
       this.cupcakeTopping = cupcakeTopping;
       this.cupcakeFlavor = cupcakeFlavor;
+      this.price = cupcakeTopping.getPrice() + cupcakeFlavor.getPrice();
    }
 
    public CupcakeTopping getCupcakeTopping() {
