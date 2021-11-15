@@ -13,7 +13,7 @@
       <!-- CSS -->
       <link rel="stylesheet" href="../assets/css/base.css">
       <link rel="stylesheet" href="../assets/css/footer.css">
-      <link rel="stylesheet" href="../assets/css/signIn.css">
+      <link rel="stylesheet" href="../assets/css/signIn2.css">
 
       <!-- Fonts -->
       <script src="https://kit.fontawesome.com/ca25e16baf.js" crossorigin="anonymous"></script>
@@ -45,12 +45,12 @@
                      <div class="formBtn_container">
                         <button id="loginBtn" class="btn" type="submit">Login</button>
                      </div>
-
-                     <div class = signUpLink_container>
-                        <p>No account yet?</p>
-                        <a class="signUpLink" href="signUp">Create an account</a>
-                     </div>
                   </form>
+
+                  <div class = signUpLink_container>
+                     <p>No account yet?</p>
+                     <a class="signUpLink" href="signUp">Create an account</a>
+                  </div>
                </div> <!-- .standardForm_container END -->
             </section>
 
