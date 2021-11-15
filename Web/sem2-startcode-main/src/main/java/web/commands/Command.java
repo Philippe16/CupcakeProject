@@ -28,7 +28,7 @@ public abstract class Command {
         commands.put("signUp", new CommandUnprotectedPage("signUp"));
 
         /* Functionality commands */
-        commands.put("signUpCommand", new signUpCommandz(""));
+        commands.put("signUpCommand", new SignUpCommand(""));
         commands.put("loginCommand", new LoginCommand(""));
         commands.put("shopCommand", new ShopCommand(""));
 
