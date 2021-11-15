@@ -101,9 +101,7 @@
 
                               <i class="orderAddedIcon far fa-check-circle"></i>
 
-                              <%
-                                 request.getSession().removeAttribute("shoppingBagMsg");
-                              %>
+                              <% request.getSession().removeAttribute("shoppingBagMsg"); %>
                            </c:if>
                         </div>
 
