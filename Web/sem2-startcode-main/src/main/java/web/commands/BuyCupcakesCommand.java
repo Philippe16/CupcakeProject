@@ -26,18 +26,27 @@ public class BuyCupcakesCommand extends CommandUnprotectedPage {
             throw new UserException("Your basket is still empty!");
          }
 
-         if(request.getParameter("user") == null){
+         if(request.getAttribute("user") == null){
             throw new UserException("You need to be signed in to buy cupcakes");
          }
 
          User user = (User) request.getAttribute("user");
 
-         if(user.getAccountBalance() < (double)request.getAttribute("shoppingBasketTotalPrice")){
+         if(user.getAccountBalance() < Double.parseDouble(request.getParameter("shoppingBasketTotalPrice"))){
             throw new UserException("Your account balance is too low...");
          }
 
+         /* Send order items to the database */
+         orderFacade.createOrder(user, ShoppingBasket.getOrderItems());
+
          HttpSession session = request.getSession();
-         
+
+         /* Empty the ShoppingBasket's orderItems list + Update session attributes */
+         ShoppingBasket.getOrderItems().clear();
+         session.setAttribute("shoppingBasketItems", ShoppingBasket.getOrderItems());
+         session.setAttribute("shoppingBasketTotalPrice", ShoppingBasket.getTotalPrice());
+         session.setAttribute("shoppingBasketTotalCupcakes", ShoppingBasket.getTotalCupcakes());
+
          return REDIRECT_INDICATOR + "shoppingBasket";
       } catch (UserException ex) {
          request.setAttribute("error", ex.getMessage());

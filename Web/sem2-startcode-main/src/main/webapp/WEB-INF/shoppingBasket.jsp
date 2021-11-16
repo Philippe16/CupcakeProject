@@ -79,6 +79,10 @@
                   <a id="buyCupcakes_link" href="buyCupcakesCommand">Buy</a>
                </div>
             </section>
+
+            <div id="msgBox">
+               ${sessionScope.error}
+            </div>
          </main>
 
          <!--Footer include -->

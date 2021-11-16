@@ -1,6 +1,8 @@
 package business.services;
 
 import business.entities.OrderItem;
+import business.entities.User;
+import business.exceptions.UserException;
 import business.persistence.Database;
 import business.persistence.OrderMapper;
 
@@ -13,8 +15,8 @@ public class OrderFacade {
       orderMapper = new OrderMapper(database);
    }
 
-   public void createOrder (ArrayList<OrderItem> orderItems){
-      orderMapper.createOrder(orderItems);
+   public void createOrder (User user, ArrayList<OrderItem> orderItems) throws UserException {
+      orderMapper.createOrder(user, orderItems);
    }
 
 }
