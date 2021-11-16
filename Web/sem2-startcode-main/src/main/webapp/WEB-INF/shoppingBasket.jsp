@@ -59,7 +59,14 @@
 
                            <input name="price" type="hidden" value="${item.cupcake.price * item.amount}">
                            <td class="centeredTd">${item.cupcake.price * item.amount}</td>
-                           <td class="centeredTd"><i class="fas fa-minus-circle removeIcon"></i></td>
+                           <td class="centeredTd">
+                              <form action="removeOrderItemFromBasketCommand" method="POST">
+                                 <input name="orderItemToBeRemoved" type="hidden" value="${item.id}">
+                                 <button class="removeButton" type="submit">
+                                    <i class="fas fa-minus-circle removeIcon"></i>
+                                 </button>
+                              </form>
+                           </td>
                         </tr>
                      </c:forEach>
 

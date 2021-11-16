@@ -91,3 +91,7 @@
    font-size: 1.2em;
    color: var(--white);
 }
+
+.removeButton{
+   background-color: var(--white);
+}

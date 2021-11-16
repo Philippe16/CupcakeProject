@@ -26,37 +26,16 @@ public class AddToBasketCommand extends CommandUnprotectedPage{
       OrderItem orderItem = new OrderItem(new Cupcake(cupcakeTopping, cupcakeFlavor), amount);
 
       ShoppingBasket.addOrderItemToShoppingBag(orderItem);
-      double shoppingBasketTotalPrice = getTotalPrice(ShoppingBasket.getOrderItems());
-      int shoppingBasketTotalCupcakes = getTotalCupcakes(ShoppingBasket.getOrderItems());
 
       HttpSession session = request.getSession();
 
       session.setAttribute("shoppingBasketItems", ShoppingBasket.getOrderItems());
-      session.setAttribute("shoppingBasketTotalPrice", shoppingBasketTotalPrice);
-      session.setAttribute("shoppingBasketTotalCupcakes", shoppingBasketTotalCupcakes);
+      session.setAttribute("shoppingBasketTotalPrice", ShoppingBasket.getTotalPrice());
+      session.setAttribute("shoppingBasketTotalCupcakes", ShoppingBasket.getTotalCupcakes());
       session.setAttribute("shoppingBagMsg", "Delicious cupcakes were added to basket!");
 
       String pageToShow = "shop";
       return REDIRECT_INDICATOR + pageToShow;
    }
 
-   private double getTotalPrice(ArrayList<OrderItem> orderItems){
-      double totalPrice = 0.0;
-
-      for(OrderItem orderItem : orderItems){
-         totalPrice += orderItem.getCupcake().getPrice() * orderItem.getAmount();
-      }
-
-      return totalPrice;
-   }
-
-   private int getTotalCupcakes(ArrayList<OrderItem> orderItems){
-      int totalCupcakes = 0;
-
-      for(OrderItem orderItem : orderItems){
-         totalCupcakes += orderItem.getAmount();
-      }
-
-      return totalCupcakes;
-   }
 }
