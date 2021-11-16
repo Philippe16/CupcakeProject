@@ -7,7 +7,6 @@ import business.exceptions.UserException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
 
 public class AddToBasketCommand extends CommandUnprotectedPage{
    public AddToBasketCommand(String pageToShow) {

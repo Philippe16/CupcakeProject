@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class LoginCommand extends CommandUnprotectedPage {
+public class SignInCommand extends CommandUnprotectedPage {
     private UserFacade userFacade;
 
-    public LoginCommand(String pageToShow) {
+    public SignInCommand(String pageToShow) {
         super(pageToShow);
         userFacade = new UserFacade(database);
     }

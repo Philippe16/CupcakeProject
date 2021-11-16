@@ -31,7 +31,7 @@ public abstract class Command {
 
         /* Functionality commands */
         commands.put("signUpCommand", new SignUpCommand(""));
-        commands.put("loginCommand", new LoginCommand(""));
+        commands.put("signInCommand", new SignInCommand(""));
         commands.put("logoutcommand", new LogoutCommand(""));
         commands.put("shopCommand", new ShopCommand(""));
         commands.put("addToBasketCommand", new AddToBasketCommand(""));

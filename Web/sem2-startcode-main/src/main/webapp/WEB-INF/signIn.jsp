@@ -33,7 +33,7 @@
                </div>
 
                <div class="standardForm_container">
-                  <form action="loginCommand" method="POST">
+                  <form action="signInCommand" method="POST">
                      <div class="inputSection">
                         <label for="email">Email:</label> <br>
                         <input id="email" name="email" type="text">

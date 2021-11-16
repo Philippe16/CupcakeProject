@@ -55,7 +55,7 @@
                               <label for="cupcakeFlavorInput">Cupcake flavor</label>
                            </div>
 
-                           <select id="cupcakeFlavorInput" class="cupcakeSelect" name="cupcakeFlavor">
+                           <select id="cupcakeFlavorInput" class="cupcakeSelect" name="cupcakeFlavor" required>
                               <option value="" disabled selected>Select a flavor</option>
 
                               <c:forEach items="${sessionScope.cupcakeFlavors}" var="flavor">
@@ -69,7 +69,7 @@
                               <label for="cupcakeToppingInput">Cupcake topping</label>
                            </div>
 
-                           <select id="cupcakeToppingInput" class="cupcakeSelect" name="cupcakeTopping">
+                           <select id="cupcakeToppingInput" class="cupcakeSelect" name="cupcakeTopping" required>
                               <option value="" disabled selected>Select a topping</option>
 
                               <c:forEach items="${sessionScope.cupcakeToppings}" var="topping">
@@ -83,13 +83,15 @@
                               <label for="amountOfCupcakesInput">Cupcake amount</label>
                            </div>
 
-                           <select id="amountOfCupcakesInput" class="cupcakeSelect" name="amountOfCupcakes">
+                           <select id="amountOfCupcakesInput" class="cupcakeSelect" name="amountOfCupcakes" required>
                               <option value="" disabled selected>Select an amount</option>
                               <option value="2">2</option>
                               <option value="4">4</option>
                               <option value="6">6</option>
                               <option value="8">8</option>
                               <option value="10">10</option>
+                              <option value="10">30</option>
+                              <option value="10">50</option>
                            </select>
                         </div>
                      </div>
