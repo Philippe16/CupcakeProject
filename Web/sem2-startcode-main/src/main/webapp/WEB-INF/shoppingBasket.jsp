@@ -16,7 +16,7 @@
       <link rel="stylesheet" href="../assets/css/base.css">
       <link rel="stylesheet" href="../assets/css/nav.css">
       <link rel="stylesheet" href="../assets/css/footer.css">
-      <link rel="stylesheet" href="../assets/css/shoppingBag.css">
+      <link rel="stylesheet" href="../assets/css/shoppingBasket.css">
 
       <!-- Fonts -->
       <script src="https://kit.fontawesome.com/ca25e16baf.js" crossorigin="anonymous"></script>
@@ -46,38 +46,38 @@
                         <th class="thNoUnderline"></th> <!-- Column for remove btns -->
                      </tr>
 
-                     <tr>
-                        <!-- In the inputs, remove hardcoded values later -->
+                     <c:forEach items="${sessionScope.shoppingBagItems}" var="item">
+                        <tr>
+                           <input name="cupcakeFlavor" type="hidden" value="${item.cupcake.cupcakeFlavor.id}">
+                           <td>${item.cupcake.cupcakeFlavor.name}</td>
 
-                        <input name="cupcakeFlavor" type="hidden" value="Chocolate">
-                        <td>Chocolate</td>
+                           <input name="cupcakeTopping" type="hidden" value="${item.cupcake.cupcakeTopping.id}">
+                           <td>${item.cupcake.cupcakeTopping.name}</td>
 
-                        <input name="cupcakeTopping" type="hidden" value="Mocca frosting">
-                        <td>Mocca frosting</td>
+                           <input name="amount" type="hidden" value="${item.amount}">
+                           <td class="centeredTd">${item.amount}</td>
 
-                        <input name="amount" type="hidden" value="6">
-                        <td class="centeredTd">6</td>
+                           <input name="price" type="hidden" value="${item.cupcake.price * item.amount}">
+                           <td class="centeredTd">${item.cupcake.price * item.amount}</td>
+                           <td class="centeredTd"><i class="fas fa-minus-circle removeIcon"></i></td>
+                        </tr>
+                     </c:forEach>
 
-                        <input name="price" type="hidden" value="180.00">
-                        <td class="centeredTd">180</td>
-                        <td class="centeredTd"><i class="fas fa-minus-circle removeIcon"></i></td>
-                     </tr>
+<%--                     <tr>--%>
+<%--                        <td>Vanilla</td>--%>
+<%--                        <td>Raspberry whipped cream</td>--%>
+<%--                        <td class="centeredTd">2</td>--%>
+<%--                        <td class="centeredTd">50</td>--%>
+<%--                        <td class="centeredTd"><i class="fas fa-minus-circle removeIcon"></i></td>--%>
+<%--                     </tr>--%>
 
-                     <tr>
-                        <td>Vanilla</td>
-                        <td>Raspberry whipped cream</td>
-                        <td class="centeredTd">2</td>
-                        <td class="centeredTd">50</td>
-                        <td class="centeredTd"><i class="fas fa-minus-circle removeIcon"></i></td>
-                     </tr>
-
-                     <tr>
-                        <td>Lemon</td>
-                        <td>Whipped cream</td>
-                        <td class="centeredTd">2</td>
-                        <td class="centeredTd">36</td>
-                        <td class="centeredTd"><i class="fas fa-minus-circle removeIcon"></i></td>
-                     </tr>
+<%--                     <tr>--%>
+<%--                        <td>Lemon</td>--%>
+<%--                        <td>Whipped cream</td>--%>
+<%--                        <td class="centeredTd">2</td>--%>
+<%--                        <td class="centeredTd">36</td>--%>
+<%--                        <td class="centeredTd"><i class="fas fa-minus-circle removeIcon"></i></td>--%>
+<%--                     </tr>--%>
 
                      <tr>
                         <td>Total:</td>

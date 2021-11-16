@@ -1,4 +1,4 @@
-<nav class="flexRow posRelative">
+<nav class="flexRow">
       <div id="menu_desktop" class="flexRow">
          <div class="menuItem_desktop">
             <a class="menuItem_link_desktop" href="home">Home</a>
@@ -43,7 +43,7 @@
          </div>
 
          <div id="shoppingCartIcon_container" class="navIconItem">
-            <a href="shoppingBag">
+            <a href="shoppingBasketCommand">
                <i class="navIcon fas fa-shopping-basket"></i>
             </a>
          </div>
