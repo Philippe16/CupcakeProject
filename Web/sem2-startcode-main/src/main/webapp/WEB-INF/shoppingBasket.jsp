@@ -81,7 +81,7 @@
             </section>
 
             <div id="msgBox">
-               ${sessionScope.error}
+               ${requestScope.error}
             </div>
          </main>
 

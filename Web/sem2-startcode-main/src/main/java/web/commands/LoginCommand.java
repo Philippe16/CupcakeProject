@@ -23,6 +23,7 @@ public class LoginCommand extends CommandUnprotectedPage {
 
         try {
             User user = userFacade.login(email, password);
+            System.out.println(user.getEmail());
 
             HttpSession session = request.getSession();
 
@@ -35,6 +36,7 @@ public class LoginCommand extends CommandUnprotectedPage {
         } catch (UserException ex) {
             request.setAttribute("error", "Wrong username or password!");
             ex.printStackTrace();
+
             return "signIn";
         }
     }

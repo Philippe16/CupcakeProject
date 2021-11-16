@@ -22,24 +22,26 @@ public class BuyCupcakesCommand extends CommandUnprotectedPage {
    @Override
    public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException {
       try {
+         HttpSession session = request.getSession();
+
          if(ShoppingBasket.getOrderItems().size() == 0){
             throw new UserException("Your basket is still empty!");
          }
 
-         if(request.getAttribute("user") == null){
+         User user = (User) session.getAttribute("user");
+
+         if(user == null){
             throw new UserException("You need to be signed in to buy cupcakes");
          }
 
-         User user = (User) request.getAttribute("user");
+         Double price = (Double) session.getAttribute("shoppingBasketTotalPrice");
 
-         if(user.getAccountBalance() < Double.parseDouble(request.getParameter("shoppingBasketTotalPrice"))){
+         if(user.getAccountBalance() < price){
             throw new UserException("Your account balance is too low...");
          }
 
          /* Send order items to the database */
          orderFacade.createOrder(user, ShoppingBasket.getOrderItems());
-
-         HttpSession session = request.getSession();
 
          /* Empty the ShoppingBasket's orderItems list + Update session attributes */
          ShoppingBasket.getOrderItems().clear();

@@ -57,6 +57,7 @@ public class UserMapper {
 
                     User user = new User(firstName, lastName, email, password, accountBalance, role);
                     user.setId(id);
+
                     return user;
                 } else {
                     throw new UserException("Could not validate user");
