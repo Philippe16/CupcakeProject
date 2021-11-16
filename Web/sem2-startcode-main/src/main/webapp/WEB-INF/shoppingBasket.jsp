@@ -75,8 +75,8 @@
                   </tr>
                </table>
 
-               <div class="standardBtn_container">
-                  <a href="buyCupcakesCommand">Buy</a>
+               <div id="buyCupcakes_container" class="standardBtn_container">
+                  <a id="buyCupcakes_link" href="buyCupcakesCommand">Buy</a>
                </div>
             </section>
          </main>

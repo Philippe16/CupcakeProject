@@ -95,3 +95,21 @@
 .removeButton{
    background-color: var(--white);
 }
+
+#buyCupcakes_container{
+   width: 130px;
+   margin: 0 auto;
+   padding: 7px 10px;
+   background-color: var(--purple);
+   border-radius: 15px;
+   font-size: 1.3em;
+}
+
+#buyCupcakes_link{
+   display: block;
+   color: var(--white);
+}
+
+#buyCupcakes_link:visited{
+   color: var(--white);
+}
