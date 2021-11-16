@@ -43,7 +43,7 @@
          </div>
 
          <div id="shoppingCartIcon_container" class="navIconItem">
-            <a href="shoppingBasketCommand">
+            <a href="shoppingBasket">
                <i class="navIcon fas fa-shopping-basket"></i>
             </a>
          </div>

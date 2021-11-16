@@ -35,7 +35,7 @@ public abstract class Command {
         commands.put("logoutcommand", new LogoutCommand(""));
         commands.put("shopCommand", new ShopCommand(""));
         commands.put("addToBasketCommand", new AddToBasketCommand(""));
-        commands.put("shoppingBasketCommand", new ShoppingBasketCommand(""));
+        commands.put("buyCupcakesCommand", new BuyCupcakesCommand(""));
 
 
         /* To be deleted later */

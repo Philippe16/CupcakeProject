@@ -6,12 +6,10 @@ import business.exceptions.UserException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
 
-public class ShoppingBasketCommand extends CommandUnprotectedPage {
+public class BuyCupcakesCommand extends CommandUnprotectedPage {
 
-   public ShoppingBasketCommand(String pageToShow) {
+   public BuyCupcakesCommand(String pageToShow) {
       super(pageToShow);
    }
 
