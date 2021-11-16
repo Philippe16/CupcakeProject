@@ -68,7 +68,7 @@
                 </div>
 
                 <div id="logoutContainer">
-                    <a id="logoutLink" href ="logoutcommand">Logout</a>
+                    <a id="logoutLink" href ="signOutCommand">Logout</a>
                 </div>
 
                 <div class="accountBalanceInfo">

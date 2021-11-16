@@ -32,7 +32,7 @@ public abstract class Command {
         /* Functionality commands */
         commands.put("signUpCommand", new SignUpCommand(""));
         commands.put("signInCommand", new SignInCommand(""));
-        commands.put("logoutcommand", new LogoutCommand(""));
+        commands.put("signOutCommand", new LogoutCommand(""));
         commands.put("shopCommand", new ShopCommand(""));
         commands.put("addToBasketCommand", new AddToBasketCommand(""));
         commands.put("removeOrderItemFromBasketCommand", new RemoveOrderItemFromBasketCommand(""));
