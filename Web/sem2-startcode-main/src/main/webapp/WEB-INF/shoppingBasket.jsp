@@ -46,7 +46,7 @@
                         <th class="thNoUnderline"></th> <!-- Column for remove btns -->
                      </tr>
 
-                     <c:forEach items="${sessionScope.shoppingBagItems}" var="item">
+                     <c:forEach items="${sessionScope.shoppingBasketItems}" var="item">
                         <tr>
                            <input name="cupcakeFlavor" type="hidden" value="${item.cupcake.cupcakeFlavor.id}">
                            <td>${item.cupcake.cupcakeFlavor.name}</td>
@@ -66,9 +66,9 @@
                      <tr>
                         <td>Total:</td>
                         <td></td>
-                        <td class="centeredTd">10 pcs.</td>
-                        <input name="totalPrice" type="hidden" value="266">
-                        <td class="centeredTd">266 kr.</td>
+                        <td class="centeredTd">${sessionScope.shoppingBasketTotalCupcakes}&nbsp;pcs.</td>
+                        <input name="totalPrice" type="hidden" value="${sessionScope.shoppingBasketTotalPrice}">
+                        <td class="centeredTd">${sessionScope.shoppingBasketTotalPrice}&nbsp;kr.</td>
                         <td class="centeredTd"></td>
                      </tr>
                   </table>

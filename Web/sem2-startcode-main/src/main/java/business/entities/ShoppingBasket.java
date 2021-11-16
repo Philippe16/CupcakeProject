@@ -2,7 +2,7 @@ package business.entities;
 
 import java.util.ArrayList;
 
-public class ShoppingBag {
+public class ShoppingBasket {
    private static ArrayList<OrderItem> orderItems = new ArrayList<>();
 
    public static ArrayList<OrderItem> getOrderItems() {
@@ -10,7 +10,7 @@ public class ShoppingBag {
    }
 
    public static void setOrderItems(ArrayList<OrderItem> orderItems) {
-      ShoppingBag.orderItems = orderItems;
+      ShoppingBasket.orderItems = orderItems;
    }
 
    public static void addOrderItemToShoppingBag(OrderItem orderItem){
