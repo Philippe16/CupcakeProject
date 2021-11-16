@@ -22,7 +22,9 @@ public class UserMapper {
                 ps.setString(3, user.getEmail());
                 ps.setString(4, user.getPassword());
                 ps.setDouble(5, user.getAccountBalance());
+
                 ps.executeUpdate();
+
                 ResultSet ids = ps.getGeneratedKeys();
                 ids.next();
                 int id = ids.getInt(1);
@@ -62,6 +64,24 @@ public class UserMapper {
                 } else {
                     throw new UserException("Could not validate user");
                 }
+            } catch (SQLException ex) {
+                throw new UserException(ex.getMessage());
+            }
+        } catch (SQLException ex) {
+            throw new UserException("Connection to database could not be established");
+        }
+    }
+
+    public void reduceUserAccountBalance(User user, Double orderPrice) throws UserException{
+        try (Connection connection = database.connect()) {
+            String sql =
+                   "UPDATE users SET accountBalance = (accountBalance - ?) WHERE user_id = ?";
+
+            try (PreparedStatement ps = connection.prepareStatement(sql)) {
+                ps.setDouble(1, orderPrice);
+                ps.setInt(2, user.getId());
+
+                ps.executeUpdate();
             } catch (SQLException ex) {
                 throw new UserException(ex.getMessage());
             }

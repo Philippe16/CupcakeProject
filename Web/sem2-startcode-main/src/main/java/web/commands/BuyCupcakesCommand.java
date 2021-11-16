@@ -37,11 +37,14 @@ public class BuyCupcakesCommand extends CommandUnprotectedPage {
          orderFacade.createOrder(user, ShoppingBasket.getOrderItems());
 
          /* Update user account balance */
+         userFacade.reduceUserAccountBalance(user, orderPrice);
+         user.setAccountBalance(user.getAccountBalance() - orderPrice);
 
          /* Empty the ShoppingBasket's orderItems list */
          ShoppingBasket.getOrderItems().clear();
 
          /* Update session attributes */
+         session.setAttribute("user", user);
          session.setAttribute("shoppingBasketItems", ShoppingBasket.getOrderItems());
          session.setAttribute("shoppingBasketTotalPrice", ShoppingBasket.getTotalPrice());
          session.setAttribute("shoppingBasketTotalCupcakes", ShoppingBasket.getTotalCupcakes());

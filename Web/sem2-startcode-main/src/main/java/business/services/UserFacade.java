@@ -22,4 +22,8 @@ public class UserFacade {
         return user;
     }
 
+    public void reduceUserAccountBalance(User user, Double orderPrice) throws UserException{
+        userMapper.reduceUserAccountBalance(user, orderPrice);
+    }
+
 }
