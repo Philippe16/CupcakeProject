@@ -63,22 +63,6 @@
                         </tr>
                      </c:forEach>
 
-<%--                     <tr>--%>
-<%--                        <td>Vanilla</td>--%>
-<%--                        <td>Raspberry whipped cream</td>--%>
-<%--                        <td class="centeredTd">2</td>--%>
-<%--                        <td class="centeredTd">50</td>--%>
-<%--                        <td class="centeredTd"><i class="fas fa-minus-circle removeIcon"></i></td>--%>
-<%--                     </tr>--%>
-
-<%--                     <tr>--%>
-<%--                        <td>Lemon</td>--%>
-<%--                        <td>Whipped cream</td>--%>
-<%--                        <td class="centeredTd">2</td>--%>
-<%--                        <td class="centeredTd">36</td>--%>
-<%--                        <td class="centeredTd"><i class="fas fa-minus-circle removeIcon"></i></td>--%>
-<%--                     </tr>--%>
-
                      <tr>
                         <td>Total:</td>
                         <td></td>
