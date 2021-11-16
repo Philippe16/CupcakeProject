@@ -36,54 +36,48 @@
                   <h2 class="form_title">Shopping cart</h2>
                </div>
 
-               <form action="" method="POST" class="standardForm">
-                  <table id="cartItem_table">
+               <table id="cartItem_table">
+                  <tr>
+                     <th>&nbsp;&nbsp;&nbsp;Cupcake flavor&nbsp;&nbsp;&nbsp;</th>
+                     <th>&nbsp;&nbsp;&nbsp;Cupcake topping&nbsp;&nbsp;&nbsp;</th>
+                     <th>&nbsp;&nbsp;&nbsp;Amount&nbsp;&nbsp;&nbsp;</th>
+                     <th>&nbsp;&nbsp;&nbsp;Price&nbsp;&nbsp;&nbsp;</th>
+                     <th class="thNoUnderline"></th> <!-- Column for remove btns -->
+                  </tr>
+
+                  <c:forEach items="${sessionScope.shoppingBasketItems}" var="item">
                      <tr>
-                        <th>&nbsp;&nbsp;&nbsp;Cupcake flavor&nbsp;&nbsp;&nbsp;</th>
-                        <th>&nbsp;&nbsp;&nbsp;Cupcake topping&nbsp;&nbsp;&nbsp;</th>
-                        <th>&nbsp;&nbsp;&nbsp;Amount&nbsp;&nbsp;&nbsp;</th>
-                        <th>&nbsp;&nbsp;&nbsp;Price&nbsp;&nbsp;&nbsp;</th>
-                        <th class="thNoUnderline"></th> <!-- Column for remove btns -->
+                        <td>${item.cupcake.cupcakeFlavor.name}</td>
+
+                        <td>${item.cupcake.cupcakeTopping.name}</td>
+
+                        <td class="centeredTd">${item.amount}</td>
+
+                        <td class="centeredTd">${item.cupcake.price * item.amount}</td>
+                        <td class="centeredTd">
+                           <form action="removeOrderItemFromBasketCommand" method="POST">
+                              <input name="orderItemToBeRemoved" type="hidden" value="${item.id}">
+                              <button class="removeButton" type="submit">
+                                 <i class="fas fa-minus-circle removeIcon"></i>
+                              </button>
+                           </form>
+                        </td>
                      </tr>
+                  </c:forEach>
 
-                     <c:forEach items="${sessionScope.shoppingBasketItems}" var="item">
-                        <tr>
-                           <input name="cupcakeFlavor" type="hidden" value="${item.cupcake.cupcakeFlavor.id}">
-                           <td>${item.cupcake.cupcakeFlavor.name}</td>
+                  <tr>
+                     <td>Total:</td>
+                     <td></td>
+                     <td class="centeredTd">${sessionScope.shoppingBasketTotalCupcakes}&nbsp;pcs.</td>
+                     <input name="totalPrice" type="hidden" value="${sessionScope.shoppingBasketTotalPrice}">
+                     <td class="centeredTd">${sessionScope.shoppingBasketTotalPrice}&nbsp;kr.</td>
+                     <td class="centeredTd"></td>
+                  </tr>
+               </table>
 
-                           <input name="cupcakeTopping" type="hidden" value="${item.cupcake.cupcakeTopping.id}">
-                           <td>${item.cupcake.cupcakeTopping.name}</td>
-
-                           <input name="amount" type="hidden" value="${item.amount}">
-                           <td class="centeredTd">${item.amount}</td>
-
-                           <input name="price" type="hidden" value="${item.cupcake.price * item.amount}">
-                           <td class="centeredTd">${item.cupcake.price * item.amount}</td>
-                           <td class="centeredTd">
-                              <form action="removeOrderItemFromBasketCommand" method="POST">
-                                 <input name="orderItemToBeRemoved" type="hidden" value="${item.id}">
-                                 <button class="removeButton" type="submit">
-                                    <i class="fas fa-minus-circle removeIcon"></i>
-                                 </button>
-                              </form>
-                           </td>
-                        </tr>
-                     </c:forEach>
-
-                     <tr>
-                        <td>Total:</td>
-                        <td></td>
-                        <td class="centeredTd">${sessionScope.shoppingBasketTotalCupcakes}&nbsp;pcs.</td>
-                        <input name="totalPrice" type="hidden" value="${sessionScope.shoppingBasketTotalPrice}">
-                        <td class="centeredTd">${sessionScope.shoppingBasketTotalPrice}&nbsp;kr.</td>
-                        <td class="centeredTd"></td>
-                     </tr>
-                  </table>
-
-                  <div class="standardBtn_container">
-                     <button class="standardBtn" type="submit">Buy</button>
-                  </div>
-               </form>
+               <div class="standardBtn_container">
+                  <a href="buyCupcakesCommand">Buy</a>
+               </div>
             </section>
          </main>
 
