@@ -1,6 +1,5 @@
 package web.commands;
 
-import business.entities.OrderItem;
 import business.entities.ShoppingBasket;
 import business.exceptions.UserException;
 
@@ -22,6 +21,7 @@ public class RemoveOrderItemFromBasketCommand extends CommandUnprotectedPage {
 
       HttpSession session = request.getSession();
 
+      /* Update the variables stored in the sessionScope */
       session.setAttribute("shoppingBasketItems", ShoppingBasket.getOrderItems());
       session.setAttribute("shoppingBasketTotalPrice", ShoppingBasket.getTotalPrice());
       session.setAttribute("shoppingBasketTotalCupcakes", ShoppingBasket.getTotalCupcakes());;
