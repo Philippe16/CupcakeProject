@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class ShopCommand extends CommandUnprotectedPage {
+public class GetShopContentCommand extends CommandUnprotectedPage {
    private ShopFacade shopFacade;
 
-   public ShopCommand(String pageToShow) {
+   public GetShopContentCommand(String pageToShow) {
       super(pageToShow);
       shopFacade = new ShopFacade(database);
    }

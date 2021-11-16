@@ -9,7 +9,7 @@
          </div>
 
          <div class="menuItem_desktop">
-            <a class="menuItem_link_desktop" href="shopCommand">Shop</a>
+            <a class="menuItem_link_desktop" href="getShopContentCommand">Shop</a>
          </div>
 
          <div class="menuItem_desktop">
@@ -67,7 +67,7 @@
          </div>
 
          <div class="menuItem_mobile">
-            <a class="menuItem_link" href="shopCommand">
+            <a class="menuItem_link" href="getShopContentCommand">
                Shop
             </a>
          </div>

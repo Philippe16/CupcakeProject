@@ -38,14 +38,6 @@ nav a:hover{
 .menuItem_desktop{
   padding-right: 5%;
 }
-
-.menuItem_link_desktop:hover{
-  color: var(--purple);
-}
-
-.menuItem_link_desktop:visited{
-  color: var(--white);
-}
 /*---------------------------------- Desktop menu END -------------------------------*/
 
 

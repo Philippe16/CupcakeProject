@@ -17,7 +17,7 @@
                </div>
 
                <div class="infoSectionNavItem_container">
-                  <a class="infoSectionNavItem_link" href="shopCommand">Shop</a>
+                  <a class="infoSectionNavItem_link" href="getShopContentCommand">Shop</a>
                </div>
 
                <div class="infoSectionNavItem_container">
