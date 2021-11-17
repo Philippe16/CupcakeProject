@@ -43,25 +43,24 @@
             <h2 class="tableTitle">Orders</h2>
 
             <table class="ordersTable">
-                <tr>
+                <tr id="ordersTable_head">
                     <th>Order ID</th>
-                    <th>Items(cupcake topping, cupcake flavor, amount)</th>
+                    <th>Items (cupcake topping, cupcake flavor, amount)</th>
                     <th>Total price</th>
                     <th>Order date</th>
                 </tr>
+
                 <c:forEach items="${sessionScope.customerOrders}" var="order">
-                    <tr>
-                        <th>#${order.order_id}</th>
+                    <tr class="ordersTable_data">
+                        <td>#${order.order_id}</td>
                         <td>
-                            -Coffe,chocolate, 12<br>
-                            - Lemon, Vanilla
+                            -Coffee,chocolate, 12<br>
+                            - Lemon, Vanilla, 6
                         </td>
                         <td>200.00kr</td>
                         <td>${order.orderDate}</td>
                     </tr>
                 </c:forEach>
-
-
             </table>
 
 
