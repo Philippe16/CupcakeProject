@@ -80,12 +80,22 @@
                      <div id="confirmationBox">
                         <span id="thankYouMsg">Thank you!</span>
                         <br>
-                        Your order has been confirmed&nbsp;<i id="confirmationIcon" class="far fa-check-circle"></i>
+                        Your order has been confirmed&nbsp;<i class="msgIcon far fa-check-circle"></i>
                      </div>
 
                       <% request.getSession().removeAttribute("orderConfirmed"); %>
                    </c:if>
-                  
+
+                  <c:if test="${requestScope.error != null}">
+                     <div id="errorBox">
+                        <span id="thankYouMsg">Oh no...</span>
+                        <br>
+                        ${requestScope.error}&nbsp;<i class="msgIcon fas fa-exclamation"></i>
+                     </div>
+
+                     <% request.getSession().removeAttribute("error"); %>
+                  </c:if>
+
                   <div id="buyCupcakes_container">
                      <a id="buyCupcakes_link" href="buyCupcakesCommand">Buy</a>
                   </div>
