@@ -44,6 +44,7 @@ nav a:hover{
 /*--------------------------------- NavIcon container -------------------------------*/
 #navIcon_container{
   justify-content: flex-end;
+  align-content: center;
 }
 
 #navIcon_container:nth-child(2){
@@ -67,6 +68,21 @@ nav a:hover{
 .navIcon:hover{
   cursor: pointer;
   color: var(--purple);
+}
+
+#orderItemCounter_container{
+  text-align: center;
+}
+
+#orderItemCounter{
+  z-index: 11;
+  top: -48px;
+  right: -13px;
+  padding: 4px 8px;
+  border-radius: 15px;
+  background-color: var(--purple);
+  color: var(--white);
+  font-size: .7em;
 }
 
 .menu_mobile_container{
@@ -116,6 +132,21 @@ nav a:hover{
   #navIcon_container{
     width: 100%;
     justify-content: flex-end;
+    align-items: center;
   }
 }
+
+@media only screen and (max-width: 500px) { /* Settings for mobile view */
+  #orderItemCounter{
+    z-index: 11;
+    top: -35px;
+    right: -10px;
+    padding: 3px;
+    border-radius: 15px;
+    background-color: var(--purple);
+    color: var(--white);
+    font-size: .6em;
+  }
+}
+
 /*---------------------------------- Media queries END ------------------------------*/

@@ -67,7 +67,7 @@
                     </a>
                 </div>
 
-                <div id="logoutContainer">
+                <div id="logoutContainer" class="posRelative">
                     <a id="logoutLink" href ="signOutCommand">Logout</a>
                 </div>
 

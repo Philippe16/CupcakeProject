@@ -57,9 +57,9 @@
             </section>
 
             <div class="backBtn_container">
-               <button class="btn" type="button">
+               <button id="homeBtn" class="btn" type="button">
                   <i class="backIcon fas fa-arrow-left"></i>
-                  <a href="home">Back</a>
+                  <a id="homeBtn_link" href="home">Back</a>
                </button>
             </div>
          </main>

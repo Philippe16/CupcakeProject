@@ -46,6 +46,14 @@
             <a href="shoppingBasket">
                <i class="navIcon fas fa-shopping-basket"></i>
             </a>
+
+            <c:if test="${sessionScope.shoppingBasketItems.size() > 0}">
+                <div id="orderItemCounter_container" class="posRelative">
+                    <div id="orderItemCounter" class="posAbsolute">
+                        ${sessionScope.shoppingBasketItems.size()}
+                    </div>
+                </div>
+            </c:if>
          </div>
 
          <div id="menu_mobile" class="navIconItem">

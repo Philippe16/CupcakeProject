@@ -57,6 +57,10 @@
    color: var(--white);
 }
 
+#homeBtn_link:visited{
+   color: var(--white);
+}
+
 .signUpLink{
    color: var(--grey);
    text-decoration: underline;
@@ -69,3 +73,4 @@
 .backBtn_container{
    margin: 0 5%;
 }
+

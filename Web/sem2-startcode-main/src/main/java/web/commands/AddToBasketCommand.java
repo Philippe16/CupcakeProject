@@ -31,6 +31,7 @@ public class AddToBasketCommand extends CommandUnprotectedPage{
       session.setAttribute("shoppingBasketItems", ShoppingBasket.getOrderItems());
       session.setAttribute("shoppingBasketTotalPrice", ShoppingBasket.getTotalPrice());
       session.setAttribute("shoppingBasketTotalCupcakes", ShoppingBasket.getTotalCupcakes());
+      session.setAttribute("shoppingBasketItemCount", ShoppingBasket.getOrderItems().size());
       session.setAttribute("shoppingBagMsg", "Delicious cupcakes were added to basket!");
 
       String pageToShow = "shop";
