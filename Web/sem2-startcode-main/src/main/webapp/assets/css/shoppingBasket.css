@@ -26,7 +26,7 @@
    color: var(--purple);
 }
 
-.standardForm{
+.innerBorder{
    border: 2px var(--mint) solid;
    width: 98%;
    margin: 0 auto;
@@ -78,30 +78,17 @@
    text-align: center;
 }
 
-.standardBtn_container{
-   text-align: center;
-}
-
-.standardBtn{
-   margin: 10px 0;
-   padding: 10px 25px;
-   border-radius: 10px;
-   background-color: var(--purple);
-   font-family: lato;
-   font-size: 1.2em;
-   color: var(--white);
-}
-
 .removeButton{
    background-color: var(--white);
 }
 
 #buyCupcakes_container{
-   width: 130px;
+   width: 120px;
    margin: 0 auto;
    padding: 7px 10px;
    background-color: var(--purple);
    border-radius: 15px;
+   text-align: center;
    font-size: 1.3em;
 }
 
@@ -115,5 +102,6 @@
 }
 
 #msgBox{
-   color: red;
+   width: 30%;
+   margin: 0 auto;
 }
