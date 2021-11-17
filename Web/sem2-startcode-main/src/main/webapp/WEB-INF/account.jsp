@@ -59,7 +59,7 @@
                 </div>
 
                 <div id="viewAllOrders_container">
-                    <a id="viewAllOrders_link" href="orders">
+                    <a id="viewAllOrders_link" href="getAllOrdersByCustomerIdCommand">
                         View all orders
                         <span class="purple">
                             <i class="fas fa-receipt"></i>

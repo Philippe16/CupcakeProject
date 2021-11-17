@@ -28,6 +28,7 @@ public abstract class Command {
         commands.put("signUp", new CommandUnprotectedPage("signUp"));
         commands.put("account", new CommandUnprotectedPage("account"));
         commands.put("shoppingBasket", new CommandUnprotectedPage("shoppingBasket"));
+        commands.put("orders", new CommandUnprotectedPage("orders"));
 
         /* Functionality commands */
         commands.put("signUpCommand", new SignUpCommand(""));
@@ -37,6 +38,7 @@ public abstract class Command {
         commands.put("addToBasketCommand", new AddToBasketCommand(""));
         commands.put("removeOrderItemFromBasketCommand", new RemoveOrderItemFromBasketCommand(""));
         commands.put("buyCupcakesCommand", new BuyCupcakesCommand(""));
+        commands.put("getAllOrdersByCustomerIdCommand", new GetAllOrdersByCustomerIdCommand(""));
 
 
         /* To be deleted later */

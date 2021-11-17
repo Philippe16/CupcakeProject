@@ -1,0 +1,55 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@import url("base.css");
+
+
+.tableTitle{
+    text-align: center;
+    margin: 40px auto;
+    font-size: 1.8em;
+    font-weight: normal;
+    font-family: the_humble_script;
+    color: var(--purple);
+}
+
+
+.ordersTable{
+    border-collapse: collapse;
+    width: 90%;
+    margin: 0 auto;
+    text-align: left;
+    background-color: var(--white);
+}
+
+
+
+.ordersTable td, .ordersTable th{
+    padding: 25px 3% ;
+}
+
+.ordersTable tr:nth-child(1) {
+    border-spacing: 20px;
+    border: 1px var(--grey) solid;
+    width: 10%;
+
+}
+
+.ordersTable tr:nth-child(2) {
+    border: 1px var(--purple) solid;
+    width: 40%;
+
+}
+
+.ordersTable tr:nth-child(3) {
+    border: 1px var(--purple) solid;
+    width: 25%;
+
+}
+
+.ordersTable tr:nth-child(4) {
+    border: 1px var(--purple) solid;
+    width: 25%;
+}
+
+

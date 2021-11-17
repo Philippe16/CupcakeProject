@@ -1,5 +1,6 @@
 package business.persistence;
 
+import business.entities.Order;
 import business.entities.OrderItem;
 import business.entities.User;
 import business.exceptions.UserException;
@@ -60,5 +61,51 @@ public class OrderMapper {
       } catch (SQLException ex) {
          throw new UserException(ex.getMessage());
       }
+
    }
+
+   public ArrayList<Order> getAllOrdersByCustomerId(int userId) throws UserException{
+      ArrayList<Order> orders = new ArrayList<>();
+
+      try (Connection connection = database.connect()) {
+         String sql =
+                 "SELECT orders.order_id, orderstatuses.status, orders.orderDate, orders.pickupDate \n" +
+                         "FROM (orders\n" +
+                         "INNER JOIN orderstatuses ON orders.fk_orderStatus_id = orderstatuses.orderStatus_id) \n" +
+                         "WHERE fk_user_id = ? \n" +
+                         "ORDER BY orders.pickupDate";
+
+
+         try (PreparedStatement ps = connection.prepareStatement(sql)) {
+            ps.setInt(1, userId);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+               while (rs.next()) {
+                  int order_id = rs.getInt("order_id");
+                  String status = rs.getString("status");
+                  LocalDate orderDate = rs.getDate("orderDate").toLocalDate();
+                  LocalDate pickupDate = rs.getDate("pickupDate").toLocalDate();
+
+                  Order order = new Order(order_id, status, orderDate, pickupDate);
+                  orders.add(order);
+               }
+
+               return orders;
+            } else {
+               throw new UserException("Could not validate user");
+            }
+         } catch (SQLException ex) {
+            throw new UserException(ex.getMessage());
+         }
+      } catch (SQLException ex) {
+         throw new UserException("Connection to database could not be established");
+      }
+
+
+
+   }
+
+
+
 }
