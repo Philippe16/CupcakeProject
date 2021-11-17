@@ -74,6 +74,10 @@ main{
     color: var(--grey);
 }
 
+#viewAllOrders_container a:hover{
+    color: var(--purple);
+}
+
 .purple{
     color: var(--purple);
 }

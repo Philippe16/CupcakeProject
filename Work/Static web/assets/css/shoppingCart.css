@@ -21,7 +21,7 @@
 
 .form_title{
   display: inline;
-  font-family: logo_font;
+  font-family: the_humble_script;
   font-size: 1.8em;
   color: var(--purple);
 }
@@ -87,7 +87,7 @@
   padding: 10px 25px;
   border-radius: 10px;
   background-color: var(--purple);
-  font-family: standard_font;
+  font-family: lato;
   font-size: 1.2em;
   color: var(--white);
 }
