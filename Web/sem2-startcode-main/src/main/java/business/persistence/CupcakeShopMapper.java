@@ -18,11 +18,10 @@ public class CupcakeShopMapper {
       cupcakeFlavorMapper = new CupcakeFlavorMapper(database);
    }
 
-   public void getCupcakeShopContent() throws UserException {
+   public CupcakeShop getCupcakeShopContent() throws UserException {
       ArrayList<CupcakeTopping> cupcakeToppings = cupcakeToppingMapper.getAllCupcakeToppings();
       ArrayList<CupcakeFlavor> cupcakeFlavors = cupcakeFlavorMapper.getAllCupcakeFlavors();
 
-      CupcakeShop.setCupcakeToppings(cupcakeToppings);
-      CupcakeShop.setCupcakeFlavors(cupcakeFlavors);
+      return new CupcakeShop(cupcakeToppings, cupcakeFlavors);
    }
 }

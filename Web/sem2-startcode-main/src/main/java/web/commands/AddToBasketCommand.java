@@ -19,14 +19,16 @@ public class AddToBasketCommand extends CommandUnprotectedPage{
       int cupcakeFlavorId = Integer.parseInt(request.getParameter("cupcakeFlavor"));
       int amount = Integer.parseInt(request.getParameter("amountOfCupcakes"));
 
-      CupcakeTopping cupcakeTopping = CupcakeShop.getCupcakeToppingById(cupcakeToppingId);
-      CupcakeFlavor cupcakeFlavor = CupcakeShop.getCupcakeFlavorById(cupcakeFlavorId);
+      HttpSession session = request.getSession();
+
+      CupcakeShop cupcakeShop = (CupcakeShop) session.getAttribute("cupcakeShop");
+
+      CupcakeTopping cupcakeTopping = cupcakeShop.getCupcakeToppingById(cupcakeToppingId);
+      CupcakeFlavor cupcakeFlavor = cupcakeShop.getCupcakeFlavorById(cupcakeFlavorId);
 
       OrderItem orderItem = new OrderItem(new Cupcake(cupcakeTopping, cupcakeFlavor), amount);
 
       ShoppingBasket.addOrderItemToShoppingBag(orderItem);
-
-      HttpSession session = request.getSession();
 
       session.setAttribute("shoppingBasketItems", ShoppingBasket.getOrderItems());
       session.setAttribute("shoppingBasketTotalPrice", ShoppingBasket.getTotalPrice());

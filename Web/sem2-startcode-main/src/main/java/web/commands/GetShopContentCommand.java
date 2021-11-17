@@ -19,12 +19,13 @@ public class GetShopContentCommand extends CommandUnprotectedPage {
    @Override
    public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException {
       try {
-         shopFacade.getCupcakeShopContent();
+         CupcakeShop cupcakeShop = shopFacade.getCupcakeShopContent();
 
          HttpSession session = request.getSession();
 
-         session.setAttribute("cupcakeToppings", CupcakeShop.getCupcakeToppings());
-         session.setAttribute("cupcakeFlavors", CupcakeShop.getCupcakeFlavors());
+         session.setAttribute("cupcakeShop", cupcakeShop);
+         session.setAttribute("cupcakeToppings", cupcakeShop.getCupcakeToppings());
+         session.setAttribute("cupcakeFlavors", cupcakeShop.getCupcakeFlavors());
 
          String pageToShow = "shop";
          return REDIRECT_INDICATOR + pageToShow;

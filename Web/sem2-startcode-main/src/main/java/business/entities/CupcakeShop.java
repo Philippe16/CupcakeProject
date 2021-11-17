@@ -3,20 +3,19 @@ package business.entities;
 import java.util.ArrayList;
 
 public class CupcakeShop {
+   private ArrayList<CupcakeTopping> cupcakeToppings;
+   private ArrayList<CupcakeFlavor> cupcakeFlavors;
 
    public CupcakeShop(ArrayList<CupcakeTopping> cupcakeToppings, ArrayList<CupcakeFlavor> cupcakeFlavors){
-      CupcakeShop.cupcakeToppings = cupcakeToppings;
-      CupcakeShop.cupcakeFlavors = cupcakeFlavors;
+      this.cupcakeToppings = cupcakeToppings;
+      this.cupcakeFlavors = cupcakeFlavors;
    }
 
-   private static ArrayList<CupcakeTopping> cupcakeToppings;
-   private static ArrayList<CupcakeFlavor> cupcakeFlavors;
-
-   public static ArrayList<CupcakeTopping> getCupcakeToppings() {
+   public ArrayList<CupcakeTopping> getCupcakeToppings() {
       return cupcakeToppings;
    }
 
-   public static CupcakeTopping getCupcakeToppingById(int id) {
+   public CupcakeTopping getCupcakeToppingById(int id) {
       CupcakeTopping cupcakeToppingMatch = null;
 
       for(CupcakeTopping cupcakeTopping : cupcakeToppings){
@@ -29,15 +28,15 @@ public class CupcakeShop {
       return cupcakeToppingMatch;
    }
 
-   public static void setCupcakeToppings(ArrayList<CupcakeTopping> cupcakeToppings) {
-      CupcakeShop.cupcakeToppings = cupcakeToppings;
+   public void setCupcakeToppings(ArrayList<CupcakeTopping> cupcakeToppings) {
+      this.cupcakeToppings = cupcakeToppings;
    }
 
-   public static ArrayList<CupcakeFlavor> getCupcakeFlavors() {
+   public ArrayList<CupcakeFlavor> getCupcakeFlavors() {
       return cupcakeFlavors;
    }
 
-   public static CupcakeFlavor getCupcakeFlavorById(int id) {
+   public CupcakeFlavor getCupcakeFlavorById(int id) {
       CupcakeFlavor cupcakeFlavorMatch = null;
 
       for(CupcakeFlavor cupcakeFlavor : cupcakeFlavors){
@@ -50,8 +49,8 @@ public class CupcakeShop {
       return cupcakeFlavorMatch;
    }
 
-   public static void setCupcakeFlavors(ArrayList<CupcakeFlavor> cupcakeFlavors) {
-      CupcakeShop.cupcakeFlavors = cupcakeFlavors;
+   public void setCupcakeFlavors(ArrayList<CupcakeFlavor> cupcakeFlavors) {
+      this.cupcakeFlavors = cupcakeFlavors;
    }
 
 }

@@ -58,7 +58,7 @@
                            <select id="cupcakeFlavorInput" class="cupcakeSelect" name="cupcakeFlavor" required>
                               <option value="" disabled selected>Select a flavor</option>
 
-                              <c:forEach items="${sessionScope.cupcakeFlavors}" var="flavor">
+                              <c:forEach items="${sessionScope.cupcakeShop.cupcakeFlavors}" var="flavor">
                                  <option value="${flavor.id}">${flavor.name}</option>
                               </c:forEach>
                            </select>
@@ -72,7 +72,7 @@
                            <select id="cupcakeToppingInput" class="cupcakeSelect" name="cupcakeTopping" required>
                               <option value="" disabled selected>Select a topping</option>
 
-                              <c:forEach items="${sessionScope.cupcakeToppings}" var="topping">
+                              <c:forEach items="${sessionScope.cupcakeShop.cupcakeToppings}" var="topping">
                                  <option value="${topping.id}">${topping.name}</option>
                               </c:forEach>
                            </select>

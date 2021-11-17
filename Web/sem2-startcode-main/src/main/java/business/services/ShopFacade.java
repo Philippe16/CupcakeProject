@@ -1,5 +1,6 @@
 package business.services;
 
+import business.entities.CupcakeShop;
 import business.exceptions.UserException;
 import business.persistence.CupcakeShopMapper;
 import business.persistence.Database;
@@ -11,7 +12,7 @@ public class ShopFacade {
       cupcakeShopMapper = new CupcakeShopMapper(database);
    }
 
-   public void getCupcakeShopContent() throws UserException {
-      cupcakeShopMapper.getCupcakeShopContent();
+   public CupcakeShop getCupcakeShopContent() throws UserException {
+      return cupcakeShopMapper.getCupcakeShopContent();
    }
 }
