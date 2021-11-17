@@ -101,7 +101,19 @@
    color: var(--white);
 }
 
-#msgBox{
-   width: 30%;
-   margin: 0 auto;
+#confirmationBox{
+   margin: 20px 0;
+   text-align: center;
+   font-size: 1.2em;
+}
+
+#thankYouMsg{
+   font-family: the_humble_script;
+   font-size: 1.4em;
+   color: var(--purple);
+}
+
+#confirmationIcon{
+   font-size: 1.3em;
+   color: var(--mint);
 }

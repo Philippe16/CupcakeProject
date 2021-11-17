@@ -76,16 +76,22 @@
                      </tr>
                   </table>
 
+                   <c:if test="${sessionScope.orderConfirmed == true}">
+                     <div id="confirmationBox">
+                        <span id="thankYouMsg">Thank you!</span>
+                        <br>
+                        Your order has been confirmed&nbsp;<i id="confirmationIcon" class="far fa-check-circle"></i>
+                     </div>
+
+                      <% request.getSession().removeAttribute("orderConfirmed"); %>
+                   </c:if>
+                  
                   <div id="buyCupcakes_container">
                      <a id="buyCupcakes_link" href="buyCupcakesCommand">Buy</a>
                   </div>
                </div>
 
             </section>
-
-            <div id="msgBox">
-               ${requestScope.error}
-            </div>
          </main>
 
          <!--Footer include -->
