@@ -90,8 +90,8 @@
                               <option value="6">6</option>
                               <option value="8">8</option>
                               <option value="10">10</option>
-                              <option value="10">30</option>
-                              <option value="10">50</option>
+                              <option value="30">30</option>
+                              <option value="50">50</option>
                            </select>
                         </div>
                      </div>
