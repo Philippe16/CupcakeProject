@@ -1,17 +1,10 @@
 package web;
 
-import business.entities.CupcakeFlavor;
-import business.entities.CupcakeShop;
-import business.entities.CupcakeTopping;
 import business.exceptions.UserException;
 import business.persistence.Database;
-import business.services.CupcakeFlavorFacade;
-import business.services.CupcakeToppingFacade;
 import web.commands.*;
-
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -38,7 +31,7 @@ public class FrontController extends HttpServlet
                 Logger.getLogger("web").log(Level.SEVERE, ex.getMessage(), ex);
             }
         }
-        
+
     }
 
     protected void processRequest(

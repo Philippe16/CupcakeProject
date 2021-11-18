@@ -1,6 +1,5 @@
 package web.commands;
 
-
 import business.entities.*;
 import business.exceptions.UserException;
 
