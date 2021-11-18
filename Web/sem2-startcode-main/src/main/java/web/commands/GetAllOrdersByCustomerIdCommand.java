@@ -38,14 +38,14 @@ public class GetAllOrdersByCustomerIdCommand extends CommandUnprotectedPage {
                 double totalOrderPrice = 0.0;
 
                 for(OrderItem orderItem : orderItems){
-                    totalOrderPrice += orderItem.getPrice();
+                    totalOrderPrice += orderItem.getPrice() * orderItem.getAmount();
                 }
 
                 order.setTotalOrderPrice(totalOrderPrice);
             }
 
             session.setAttribute("customerOrders", orders);
-            
+
             return REDIRECT_INDICATOR + "orders";
         }catch (UserException ex){
             request.setAttribute("error", "Something went wrong when getting orders from the database");
