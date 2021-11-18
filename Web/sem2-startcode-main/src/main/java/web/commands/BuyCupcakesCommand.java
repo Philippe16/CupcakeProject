@@ -49,7 +49,9 @@ public class BuyCupcakesCommand extends CommandUnprotectedPage {
          session.setAttribute("shoppingBasketTotalCupcakes", ShoppingBasket.getTotalCupcakes());
          session.setAttribute("orderConfirmed", true);
 
-         return REDIRECT_INDICATOR + "shoppingBasket";
+         String pageToShow = "shoppingBasket";
+
+         return REDIRECT_INDICATOR + pageToShow;
       } catch (UserException ex) {
          request.setAttribute("error", ex.getMessage());
          return "shoppingBasket";

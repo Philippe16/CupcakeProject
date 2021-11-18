@@ -31,6 +31,7 @@ public class SignInCommand extends CommandUnprotectedPage {
             session.setAttribute("email", email);
 
             String pageToShow = "home";
+
             return REDIRECT_INDICATOR + pageToShow;
         } catch (UserException ex) {
             request.setAttribute("error", "Wrong username or password!");

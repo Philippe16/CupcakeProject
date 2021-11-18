@@ -46,7 +46,9 @@ public class GetAllOrdersByCustomerIdCommand extends CommandUnprotectedPage {
 
             session.setAttribute("customerOrders", orders);
 
-            return REDIRECT_INDICATOR + "orders";
+            String pageToShow = "orders";
+
+            return REDIRECT_INDICATOR + pageToShow;
         }catch (UserException ex){
             request.setAttribute("error", "Something went wrong when getting orders from the database");
             return "orders";

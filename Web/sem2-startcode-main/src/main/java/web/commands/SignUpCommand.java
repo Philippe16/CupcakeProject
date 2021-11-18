@@ -33,7 +33,8 @@ public class SignUpCommand extends CommandUnprotectedPage {
         session.setAttribute("user", user);
         session.setAttribute("role", user.getRole());
 
-        return "home";
+        String pageToShow = "home";
+        return REDIRECT_INDICATOR + pageToShow;
 
     }
 

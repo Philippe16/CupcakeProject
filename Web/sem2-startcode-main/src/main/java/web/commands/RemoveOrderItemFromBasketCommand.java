@@ -26,6 +26,8 @@ public class RemoveOrderItemFromBasketCommand extends CommandUnprotectedPage {
       session.setAttribute("shoppingBasketTotalPrice", ShoppingBasket.getTotalPrice());
       session.setAttribute("shoppingBasketTotalCupcakes", ShoppingBasket.getTotalCupcakes());;
 
-      return REDIRECT_INDICATOR + "shoppingBasket";
+      String pageToShow = "shoppingBasket";
+
+      return REDIRECT_INDICATOR + pageToShow;
    }
 }

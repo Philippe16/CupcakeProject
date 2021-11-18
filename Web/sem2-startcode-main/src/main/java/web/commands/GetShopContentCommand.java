@@ -28,6 +28,7 @@ public class GetShopContentCommand extends CommandUnprotectedPage {
          session.setAttribute("cupcakeFlavors", cupcakeShop.getCupcakeFlavors());
 
          String pageToShow = "shop";
+
          return REDIRECT_INDICATOR + pageToShow;
       } catch (UserException ex) {
          request.setAttribute("error", "Could not retrieve shop content...");
