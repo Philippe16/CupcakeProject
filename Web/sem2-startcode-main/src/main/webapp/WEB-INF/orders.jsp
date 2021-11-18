@@ -56,10 +56,11 @@
                     <tr class="ordersTable_data">
                         <td>#${order.order_id}</td>
                         <td>
-                            -Coffee,chocolate, 12<br>
-                            - Lemon, Vanilla, 6
+                            <c:forEach items="${order.orderItems}" var="orderItem">
+                                - ${orderItem.cupcakeTopping}, ${orderItem.cupcakeFlavor}, ${orderItem.amount}<br>
+                            </c:forEach>
                         </td>
-                        <td>200.00kr</td>
+                        <td>${order.totalOrderPrice} kr</td>
                         <td>${order.pickupDate}</td>
                         <td>${order.orderDate}</td>
                         <td>${order.status}</td>

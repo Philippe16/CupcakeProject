@@ -1,7 +1,6 @@
 package business.entities;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class Order {
@@ -9,22 +8,23 @@ public class Order {
     private String status;
     private LocalDate orderDate;
     private LocalDate pickupDate;
-    private ArrayList<BasketItem> basketItems;
+    private ArrayList<OrderItem> orderItems;
+    private double totalOrderPrice;
 
     public Order(int order_id, String status, LocalDate orderDate, LocalDate pickupDate) {
         this.order_id = order_id;
         this.status = status;
         this.orderDate = orderDate;
         this.pickupDate = pickupDate;
-        this.basketItems = new ArrayList<>();
+        this.orderItems = new ArrayList<>();
     }
 
-    public ArrayList<BasketItem> getOrderItems() {
-        return basketItems;
+    public ArrayList<OrderItem> getOrderItems() {
+        return orderItems;
     }
 
-    public void setOrderItems(ArrayList<BasketItem> basketItems) {
-        this.basketItems = basketItems;
+    public void setOrderItems(ArrayList<OrderItem> orderItems) {
+        this.orderItems = orderItems;
     }
 
     public int getOrder_id() {
@@ -57,5 +57,13 @@ public class Order {
 
     public void setPickupDate(LocalDate pickupDate) {
         this.pickupDate = pickupDate;
+    }
+
+    public double getTotalOrderPrice() {
+        return totalOrderPrice;
+    }
+
+    public void setTotalOrderPrice(double totalOrderPrice) {
+        this.totalOrderPrice = totalOrderPrice;
     }
 }

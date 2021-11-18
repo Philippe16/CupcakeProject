@@ -71,15 +71,14 @@ public class OrderMapper {
                          "WHERE fk_user_id = ? \n" +
                          "ORDER BY orders.pickupDate";
 
-
          try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setInt(1, userId);
             ResultSet rs = ps.executeQuery();
 
-            if (rs.next()) {
-               ArrayList<Order> orders = new ArrayList<>();
+            ArrayList<Order> orders = new ArrayList<>();
 
-               while (rs.next()) {
+            if (rs.next()) {
+               do {
                   int order_id = rs.getInt("order_id");
                   String status = rs.getString("status");
                   LocalDate orderDate = rs.getDate("orderDate").toLocalDate();
@@ -87,11 +86,11 @@ public class OrderMapper {
 
                   Order order = new Order(order_id, status, orderDate, pickupDate);
                   orders.add(order);
-               }
+               } while (rs.next());
 
                return orders;
             } else {
-               throw new UserException("Could not validate user");
+               throw new UserException("Could get retrieve order details from our database at the moment");
             }
          } catch (SQLException ex) {
             throw new UserException(ex.getMessage());
@@ -99,11 +98,6 @@ public class OrderMapper {
       } catch (SQLException ex) {
          throw new UserException("Connection to database could not be established");
       }
-
-
-
    }
-
-
 
 }

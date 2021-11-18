@@ -23,7 +23,6 @@ public class SignInCommand extends CommandUnprotectedPage {
 
         try {
             User user = userFacade.login(email, password);
-            System.out.println(user.getEmail());
 
             HttpSession session = request.getSession();
 

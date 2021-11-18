@@ -27,7 +27,7 @@ public class CupcakeToppingMapper {
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
-               while(rs.next()){
+               do {
                   int id = rs.getInt("cupcakeTopping_id");
                   String name = rs.getString("name");
                   double price = rs.getDouble("price");
@@ -35,7 +35,8 @@ public class CupcakeToppingMapper {
                   CupcakeTopping cupcakeTopping = new CupcakeTopping(name, price);
                   cupcakeTopping.setId(id);
                   cupcakeToppings.add(cupcakeTopping);
-               }
+               } while (rs.next());
+
                return cupcakeToppings;
             } else {
                throw new UserException("Could not get cupcake topping data from the database");

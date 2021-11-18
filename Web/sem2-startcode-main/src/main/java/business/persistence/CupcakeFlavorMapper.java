@@ -27,7 +27,7 @@ public class CupcakeFlavorMapper {
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
-               while(rs.next()){
+               do {
                   int id = rs.getInt("cupcakeFlavor_id");
                   String name = rs.getString("name");
                   double price = rs.getDouble("price");
@@ -35,7 +35,7 @@ public class CupcakeFlavorMapper {
                   CupcakeFlavor cupcakeFlavor = new CupcakeFlavor(name, price);
                   cupcakeFlavor.setId(id);
                   cupcakeFlavors.add(cupcakeFlavor);
-               }
+               } while (rs.next());
 
                return cupcakeFlavors;
             } else {
