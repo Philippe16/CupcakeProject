@@ -36,7 +36,7 @@
                <h2 class="welcomePreviewTxt_title">
                   <span class="h2Medium">Welcome</span><br>
                   <span class="h2Small">to</span><br>
-                  <span class="h2Big">Dreamy Cupcakes</span>
+                  <span class="h2Big">Olska Cupcakes</span>
                </h2>
 
                <div class="decorativeLine_container decorativeLine_right posAbsolute">

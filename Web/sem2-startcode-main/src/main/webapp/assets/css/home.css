@@ -49,10 +49,11 @@ main a:visited{
 }
 
 .h2Small{
-  font-size: 1.3em;
+  font-size: 2em;
 }
 
 .h2Big{
+  line-height: 90px;
   font-size: 2.5em;
 }
 
@@ -191,12 +192,17 @@ main a:visited{
   .welcomePreviewTxt_title{
     line-height: 35px;
   }
+  
+  .h2Small{
+    font-size: 1.2em;
+  }
 
   .h2Medium{
     font-size: 1.4em;
   }
   
   .h2Big{
+    line-height: 50px;
     font-size: 1.6em;
   }
 }

@@ -62,7 +62,7 @@
                Email:<br>
 
                <address>
-                  dreamyCupcakes@gmail.com
+                  olskaCupcakes@gmail.com
                </address>
             </section>
 
