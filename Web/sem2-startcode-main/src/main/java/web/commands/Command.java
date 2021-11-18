@@ -26,9 +26,9 @@ public abstract class Command {
         commands.put("contact", new CommandUnprotectedPage("contact"));
         commands.put("signIn", new CommandUnprotectedPage("signIn"));
         commands.put("signUp", new CommandUnprotectedPage("signUp"));
-        commands.put("account", new CommandUnprotectedPage("account"));
+        commands.put("account", new CommandProtectedPage("account", "customer"));
         commands.put("shoppingBasket", new CommandUnprotectedPage("shoppingBasket"));
-        commands.put("orders", new CommandUnprotectedPage("orders"));
+        commands.put("orders", new CommandProtectedPage("orders", "customer"));
 
         /* Functionality commands */
         commands.put("signUpCommand", new SignUpCommand(""));
