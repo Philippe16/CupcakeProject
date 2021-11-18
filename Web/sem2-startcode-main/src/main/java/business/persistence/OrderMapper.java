@@ -1,24 +1,22 @@
 package business.persistence;
 
 import business.entities.Order;
-import business.entities.OrderItem;
+import business.entities.BasketItem;
 import business.entities.User;
 import business.exceptions.UserException;
 
 import java.sql.*;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class OrderMapper {
    private Database database;
-   DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
    public OrderMapper(Database database) {
       this.database = database;
    }
 
-   public void createOrder(User user, ArrayList<OrderItem> orderItems) throws UserException{
+   public void createOrder(User user, ArrayList<BasketItem> basketItems) throws UserException{
       try (Connection connection = database.connect()) {
          LocalDate orderDate = LocalDate.now();
 
@@ -44,12 +42,12 @@ public class OrderMapper {
                 "VALUES (?, ?, ?, ?, ?)";
 
          try (PreparedStatement ps = connection.prepareStatement(sql2, Statement.RETURN_GENERATED_KEYS)) {
-            for (OrderItem orderItem : orderItems) {
+            for (BasketItem basketItem : basketItems) {
                ps.setInt(1, orderId);
-               ps.setInt(2, orderItem.getCupcake().getCupcakeFlavor().getId());
-               ps.setInt(3, orderItem.getCupcake().getCupcakeTopping().getId());
-               ps.setInt(4, orderItem.getAmount());
-               ps.setDouble(5, orderItem.getCupcake().getPrice());
+               ps.setInt(2, basketItem.getCupcake().getCupcakeFlavor().getId());
+               ps.setInt(3, basketItem.getCupcake().getCupcakeTopping().getId());
+               ps.setInt(4, basketItem.getAmount());
+               ps.setDouble(5, basketItem.getCupcake().getPrice());
 
                ps.addBatch();
             }
@@ -65,8 +63,6 @@ public class OrderMapper {
    }
 
    public ArrayList<Order> getAllOrdersByCustomerId(int userId) throws UserException{
-      ArrayList<Order> orders = new ArrayList<>();
-
       try (Connection connection = database.connect()) {
          String sql =
                  "SELECT orders.order_id, orderstatuses.status, orders.orderDate, orders.pickupDate \n" +
@@ -81,6 +77,8 @@ public class OrderMapper {
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
+               ArrayList<Order> orders = new ArrayList<>();
+
                while (rs.next()) {
                   int order_id = rs.getInt("order_id");
                   String status = rs.getString("status");

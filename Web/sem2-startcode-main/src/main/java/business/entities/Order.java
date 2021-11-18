@@ -1,30 +1,30 @@
 package business.entities;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class Order {
-    int order_id;
-    String status;
-    LocalDate orderDate;
-    LocalDate pickupDate;
-    private static ArrayList<OrderItem> orderItems = new ArrayList<>();
+    private int order_id;
+    private String status;
+    private LocalDate orderDate;
+    private LocalDate pickupDate;
+    private ArrayList<BasketItem> basketItems;
 
     public Order(int order_id, String status, LocalDate orderDate, LocalDate pickupDate) {
-        this.orderItems = orderItems;
         this.order_id = order_id;
         this.status = status;
         this.orderDate = orderDate;
         this.pickupDate = pickupDate;
-
+        this.basketItems = new ArrayList<>();
     }
 
-    public static ArrayList<OrderItem> getOrderItems() {
-        return orderItems;
+    public ArrayList<BasketItem> getOrderItems() {
+        return basketItems;
     }
 
-    public static void setOrderItems(ArrayList<OrderItem> orderItems) {
-        Order.orderItems = orderItems;
+    public void setOrderItems(ArrayList<BasketItem> basketItems) {
+        this.basketItems = basketItems;
     }
 
     public int getOrder_id() {

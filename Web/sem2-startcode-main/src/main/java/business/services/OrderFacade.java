@@ -1,7 +1,7 @@
 package business.services;
 
 import business.entities.Order;
-import business.entities.OrderItem;
+import business.entities.BasketItem;
 import business.entities.User;
 import business.exceptions.UserException;
 import business.persistence.Database;
@@ -16,8 +16,8 @@ public class OrderFacade {
       orderMapper = new OrderMapper(database);
    }
 
-   public void createOrder (User user, ArrayList<OrderItem> orderItems) throws UserException {
-      orderMapper.createOrder(user, orderItems);
+   public void createOrder (User user, ArrayList<BasketItem> basketItems) throws UserException {
+      orderMapper.createOrder(user, basketItems);
    }
 
    public ArrayList<Order> getAllOrdersByCustomerId(int userId) throws UserException {

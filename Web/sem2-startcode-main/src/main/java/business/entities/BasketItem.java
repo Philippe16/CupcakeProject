@@ -1,13 +1,13 @@
 package business.entities;
 
-public class OrderItem {
+public class BasketItem {
    private static int idCounter = 1;
 
    private int id;
    private Cupcake cupcake;
    private int amount;
 
-   public OrderItem(Cupcake cupcake, int amount){
+   public BasketItem(Cupcake cupcake, int amount){
       this.id = idCounter;
       this.cupcake = cupcake;
       this.amount = amount;
@@ -20,7 +20,7 @@ public class OrderItem {
    }
 
    public static void setIdCounter(int idCounter) {
-      OrderItem.idCounter = idCounter;
+      BasketItem.idCounter = idCounter;
    }
 
    public int getId() {

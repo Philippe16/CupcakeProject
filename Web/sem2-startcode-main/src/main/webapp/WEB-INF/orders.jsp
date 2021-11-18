@@ -47,7 +47,9 @@
                     <th>Order ID</th>
                     <th>Items (cupcake topping, cupcake flavor, amount)</th>
                     <th>Total price</th>
+                    <th>Pickup date</th>
                     <th>Order date</th>
+                    <th>Order status</th>
                 </tr>
 
                 <c:forEach items="${sessionScope.customerOrders}" var="order">
@@ -58,7 +60,9 @@
                             - Lemon, Vanilla, 6
                         </td>
                         <td>200.00kr</td>
+                        <td>${order.pickupDate}</td>
                         <td>${order.orderDate}</td>
+                        <td>${order.status}</td>
                     </tr>
                 </c:forEach>
             </table>

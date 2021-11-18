@@ -17,7 +17,7 @@ public class UserMapper {
             String sql = "INSERT INTO users (firstName, lastName, email, password, accountBalance) VALUES (?, ?, ?, ?, ?)";
 
             try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-                ps.setString(1, user.getfirstName());
+                ps.setString(1, user.getFirstName());
                 ps.setString(2, user.getLastName());
                 ps.setString(3, user.getEmail());
                 ps.setString(4, user.getPassword());

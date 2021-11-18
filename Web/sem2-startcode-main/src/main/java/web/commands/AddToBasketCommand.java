@@ -26,9 +26,9 @@ public class AddToBasketCommand extends CommandUnprotectedPage{
       CupcakeTopping cupcakeTopping = cupcakeShop.getCupcakeToppingById(cupcakeToppingId);
       CupcakeFlavor cupcakeFlavor = cupcakeShop.getCupcakeFlavorById(cupcakeFlavorId);
 
-      OrderItem orderItem = new OrderItem(new Cupcake(cupcakeTopping, cupcakeFlavor), amount);
+      BasketItem basketItem = new BasketItem(new Cupcake(cupcakeTopping, cupcakeFlavor), amount);
 
-      ShoppingBasket.addOrderItemToShoppingBag(orderItem);
+      ShoppingBasket.addOrderItemToShoppingBag(basketItem);
 
       session.setAttribute("shoppingBasketItems", ShoppingBasket.getOrderItems());
       session.setAttribute("shoppingBasketTotalPrice", ShoppingBasket.getTotalPrice());

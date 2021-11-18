@@ -38,7 +38,7 @@
     border-left: 1px var(--grey) solid;
 }
 
-#ordersTable_head th:nth-child(4){
+#ordersTable_head th:nth-child(6){
     border-right: 1px var(--grey) solid;
 }
 
@@ -46,24 +46,31 @@
     border-left: 1px var(--purple) solid;
 }
 
-.ordersTable_data td:nth-child(4){
+.ordersTable_data td:nth-child(6){
     border-right: 1px var(--purple) solid;
 }
 
-.ordersTable tr td:nth-child(1) {
+.ordersTable tr td:nth-child(1) { /* Order id */
     width: 10%;
 }
 
-.ordersTable tr td:nth-child(2) {
-    width: 40%;
+.ordersTable tr td:nth-child(2) { /* Order cupcake details */
+    width: 30%;
 }
 
-.ordersTable tr td:nth-child(3) {
-    width: 25%;
+.ordersTable tr td:nth-child(3) { /* Total price */
+    width: 15%;
 }
 
-.ordersTable tr td:nth-child(4) {
-    width: 25%;
+.ordersTable tr td:nth-child(4) { /* Pickup date */
+    width: 15%;
 }
 
+.ordersTable tr td:nth-child(5) { /* Order date */
+    width: 15%;
+}
+
+.ordersTable tr td:nth-child(6) { /* Order status */
+    width: 15%;
+}
 
