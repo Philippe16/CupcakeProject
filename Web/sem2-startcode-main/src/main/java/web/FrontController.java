@@ -28,7 +28,6 @@ public class FrontController extends HttpServlet
     private final static String URL = "jdbc:mysql://localhost:3306/dreamycupcakesdb?serverTimezone=CET";
 
     public static Database database;
-    public static CupcakeShop cupcakeShop;
 
     public void init() throws ServletException {
         // Initialize database connection
@@ -39,22 +38,7 @@ public class FrontController extends HttpServlet
                 Logger.getLogger("web").log(Level.SEVERE, ex.getMessage(), ex);
             }
         }
-
-        // Initialize whatever global datastructures needed here:
-        if(FrontController.cupcakeShop == null){
-            try{
-                CupcakeToppingFacade cupcakeToppingFacade = new CupcakeToppingFacade(database);
-                ArrayList<CupcakeTopping> cupcakeToppings = cupcakeToppingFacade.getAllCupcakeToppings();
-
-                CupcakeFlavorFacade cupcakeFlavorFacade = new CupcakeFlavorFacade(database);
-                ArrayList<CupcakeFlavor> cupcakeFlavors = cupcakeFlavorFacade.getAllCupcakeFlavors();
-
-                cupcakeShop = new CupcakeShop(cupcakeToppings, cupcakeFlavors);
-
-            }catch(UserException ex){
-                Logger.getLogger("web").log(Level.SEVERE, ex.getMessage(), ex);
-            }
-        }
+        
     }
 
     protected void processRequest(

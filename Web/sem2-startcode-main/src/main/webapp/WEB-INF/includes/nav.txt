@@ -9,7 +9,7 @@
          </div>
 
          <div class="menuItem_desktop">
-            <a class="menuItem_link_desktop" href="getShopContentCommand">Shop</a>
+            <a class="menuItem_link_desktop" href="${pageContext.request.contextPath}/fc/getShopContentCommand">Shop</a>
          </div>
 
          <div class="menuItem_desktop">
