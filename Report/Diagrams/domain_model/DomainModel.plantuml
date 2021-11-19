@@ -1,0 +1,257 @@
+
+
+@startuml Domain Model
+  ' web folder
+  object FrontController{
+    String USER;
+    String PASSWORD;
+    String URL;
+  }
+
+  object Index{
+  }
+  ' web folder END
+
+'---------------------------------------------------------
+
+  ' filters folder
+  object AuthorizationFilter{  
+  }
+  ' filters folder END
+
+'---------------------------------------------------------
+
+  'commands folder
+  object Command{
+    String REDIRECT_INDICATOR;
+    String WAS_NOT_FOUND_COMMAND;
+    HashMap <String, Commands> commands;
+    Database database;
+  }
+  Database o-- Command
+
+  object CommandUnprotectedPage{
+    String pageToShow;
+  }
+  Command <|-- CommandUnprotectedPage
+
+  object CommandProtectedPage{
+    String role;
+    String pageToShow;
+  }
+  Command <|-- CommandProtectedPage
+
+  object CommandUnknown{
+  }
+  Command <|-- CommandUnknown
+
+  object SignInCommand{
+    UserFacade userFacade;
+  }
+  CommandUnprotectedPage <|-- SignInCommand
+  UserFacade *-- SignInCommand
+
+  object SignUpCommand{
+    UserFacade userFacade;
+  }
+  CommandUnprotectedPage <|-- SignUpCommand
+  UserFacade *-- SignUpCommand
+
+  object LogoutCommand{
+  }
+  CommandUnprotectedPage <|-- LogoutCommand
+
+  object AddToBasketCommand{
+  }
+  CommandUnprotectedPage <|-- AddToBasketCommand
+
+  object BuyCupcakesCommand{
+    OrderFacade orderFacade;
+    UserFacade userFacade;
+  }
+  CommandUnprotectedPage <|-- BuyCupcakesCommand
+  OrderFacade *-- BuyCupcakesCommand
+  UserFacade *-- BuyCupcakesCommand
+
+  object GetAllOrdersByCustomerIdCommand{
+    OrderFacade orderFacade;
+    OrderItemFacade orderItemFacade;
+  }
+  CommandUnprotectedPage <|-- GetAllOrdersByCustomerIdCommand
+  OrderFacade *-- GetAllOrdersByCustomerIdCommand
+  UserFacade *-- GetAllOrdersByCustomerIdCommand
+
+  object GetShopContentCommand{
+    ShopFacade shopFacade;
+  }
+  CommandUnprotectedPage <|-- GetShopContentCommand
+  ShopFacade *-- GetShopContentCommand
+
+  object RemoveOrderItemFromBasketCommand{
+  }
+  CommandUnprotectedPage <|-- RemoveOrderItemFromBasketCommand
+  ' commands folder END
+
+'---------------------------------------------------------
+
+  ' services folder
+  object CupcakeFlavorFacade{
+    CupcakeFlavorMapper cupcakeFlavorMapper;
+  }
+  CupcakeFlavorMapper *-- CupcakeFlavorFacade
+
+  object CupcakeToppingFacade{
+    CupcakeToppingMapper cupcakeToppingMapper;
+  }
+  CupcakeToppingMapper *-- CupcakeToppingFacade
+
+  object OrderFacade{
+    OrderMapper orderMapper;
+  }
+  OrderMapper *-- OrderFacade
+
+  object OrderItemFacade{
+    OrderItemMapper orderItemMapper;
+  }
+  OrderItemMapper *-- OrderItemFacade
+
+  object ShopFacade{
+    CupcakeShopMapper cupcakeShopMapper;
+  }
+  CupcakeShopMapper *-- ShopFacade
+
+  object UserFacade{
+    UserMapper usermapper
+  }
+  UserMapper *-- UserFacade
+  ' services folder END
+
+'---------------------------------------------------------
+
+  ' persistence
+  object CupcakeFlavorMapper{
+    Database database
+  }
+  Database o-- CupcakeFlavorMapper
+
+  object CupcakeToppingMapper{
+    Database database
+  }
+  Database o-- CupcakeToppingMapper
+
+  object CupcakeShopMapper{
+    Database database;
+    CupcakeToppingMapper cupcakeToppingMapper;
+    CupcakeFlavorMapper cupcakeFlavorMapper;
+  }
+  Database o-- CupcakeShopMapper
+  CupcakeToppingMapper *-- CupcakeShopMapper
+  CupcakeFlavorMapper *-- CupcakeShopMapper
+
+  object Database{
+    Connection connection;
+    String PASSWORD;
+    String USER;
+    String URL;
+  }
+  Command o-- Database
+
+  object OrderItemMapper{
+    Database database;
+  }
+  Database o-- OrderMapper
+
+  object OrderMapper{
+    Database database;
+  }
+  Database o-- OrderMapper
+
+  object UserMapper{
+    Database database;
+  }
+  Database o-- UserMapper
+  ' persistence END
+
+  '---------------------------------------------------------
+
+  ' exceptions folder
+  object UserException{
+  }
+  Exception <|-- UserException
+  ' exceptions folder END
+
+  '---------------------------------------------------------
+
+  ' entities folder
+  object BasketItem{
+    int idCounter;
+    int id;
+    Cupcake cupcake;
+    int amount;
+  }
+  Cupcake o-- BasketItem
+
+  object Cupcake{
+    CupcakeTopping cupcakeTopping;
+    CupcakeFlavor cupcakeFlavor;
+    double price;
+  }
+  CupcakeTopping o-- Cupcake
+  CupcakeFlavor o-- Cupcake
+
+  object CupcakeFlavor{
+    int id;
+    String name;
+    double price;
+  }
+
+  object CupcakeTopping{
+    int id;
+    String name;
+    double price;
+  }
+
+  object CupcakeShop{
+    ArrayList<CupcakeTopping> cupcakeToppings;
+    ArrayList<CupcakeFlavor> cupcakeFlavors;
+  }
+  CupcakeTopping o-- CupcakeShop
+  CupcakeFlavor o-- CupcakeShop
+
+  object Order{
+    int order_id;
+    String status;
+    LocalDate orderDate;
+    LocalDate pickupDate;
+    ArrayList<OrderItem> orderItems;
+    double totalOrderPrice;
+  }
+  OrderItem o-- Order
+
+  object OrderItem{
+    int order_id;
+    String cupcakeFlavor;
+    String cupcakeTopping;
+    int amount;
+    double price;
+  }
+
+  object ShoppingBasket{
+  }
+
+  object User{
+    int id;
+    String firstName;
+    String lastName;
+    String email;
+    String password;
+    double accountBalance;
+    String role;
+  }
+  ' entities folder END
+@enduml
+
+' Aggregation o-- (Is a) Is not responsible for the lifespan of the other class
+' Composition *-- (Has a) Responsible for the lifespan of the other class
+' Extention <|-- (Extends) 
+' Number "n"

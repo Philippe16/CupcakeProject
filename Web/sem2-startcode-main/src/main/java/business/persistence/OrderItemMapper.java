@@ -1,6 +1,5 @@
 package business.persistence;
 
-import business.entities.Order;
 import business.entities.OrderItem;
 import business.exceptions.UserException;
 
